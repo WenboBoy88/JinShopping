@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZWBMineHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morentouxiang" translatesAutoresizingMaskIntoConstraints="NO" id="NQR-gn-hqr">
+                    <rect key="frame" x="16" y="25" width="70" height="70"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NQR-gn-hqr" secondAttribute="height" multiplier="1:1" id="Y4I-9X-OpT"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjo-dc-giw">
+                    <rect key="frame" x="94" y="31" width="120" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="MIi-2x-7yE"/>
+                        <constraint firstAttribute="height" constant="25" id="mha-Ik-rIc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="156XXXXXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXo-rU-lWm">
+                    <rect key="frame" x="117" y="64" width="100" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="mWm-lP-pLo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cen_renzheng" translatesAutoresizingMaskIntoConstraints="NO" id="G3a-lV-1UN">
+                    <rect key="frame" x="94" y="64" width="19" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="4fC-TK-wfe"/>
+                        <constraint firstAttribute="width" constant="19" id="c3d-Ro-RTu"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHa-Ru-thN">
+                    <rect key="frame" x="225" y="62" width="48" height="26"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="MjZ-gz-7CF"/>
+                        <constraint firstAttribute="width" constant="48" id="Vlc-pq-5e1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="签到">
+                        <color key="titleColor" red="0.98039215686274506" green="0.72549019607843135" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="signinButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="RO1-uy-x1t"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cen_youjian" translatesAutoresizingMaskIntoConstraints="NO" id="8Xj-ew-qih">
+                    <rect key="frame" x="349" y="51" width="19" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="4MX-Ld-INZ"/>
+                        <constraint firstAttribute="width" constant="19" id="l3h-ei-qmj"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NQR-gn-hqr" secondAttribute="bottom" constant="25" id="4az-YV-Iop"/>
+                <constraint firstItem="wXo-rU-lWm" firstAttribute="leading" secondItem="G3a-lV-1UN" secondAttribute="trailing" constant="4" id="MMA-Xh-nLd"/>
+                <constraint firstItem="wXo-rU-lWm" firstAttribute="top" secondItem="G3a-lV-1UN" secondAttribute="top" id="MTP-ys-MWD"/>
+                <constraint firstItem="kHa-Ru-thN" firstAttribute="centerY" secondItem="wXo-rU-lWm" secondAttribute="centerY" id="SUA-xy-vR7"/>
+                <constraint firstItem="8Xj-ew-qih" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="TCl-PG-9Ht"/>
+                <constraint firstItem="G3a-lV-1UN" firstAttribute="leading" secondItem="gjo-dc-giw" secondAttribute="leading" id="bBZ-uC-58M"/>
+                <constraint firstItem="NQR-gn-hqr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="ev5-gQ-Jh4"/>
+                <constraint firstItem="wXo-rU-lWm" firstAttribute="bottom" secondItem="G3a-lV-1UN" secondAttribute="bottom" id="ieN-SI-xnC"/>
+                <constraint firstAttribute="trailing" secondItem="8Xj-ew-qih" secondAttribute="trailing" constant="7" id="jdP-a5-bVH"/>
+                <constraint firstItem="gjo-dc-giw" firstAttribute="leading" secondItem="NQR-gn-hqr" secondAttribute="trailing" constant="8" id="kQc-67-9mh"/>
+                <constraint firstItem="kHa-Ru-thN" firstAttribute="leading" secondItem="wXo-rU-lWm" secondAttribute="trailing" constant="8" id="tpM-75-xTB"/>
+                <constraint firstItem="gjo-dc-giw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="31" id="wzh-FI-uN9"/>
+                <constraint firstItem="NQR-gn-hqr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="x2m-vd-eqz"/>
+                <constraint firstItem="G3a-lV-1UN" firstAttribute="top" secondItem="gjo-dc-giw" secondAttribute="bottom" constant="8" id="xSS-Af-ATv"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerImageView" destination="NQR-gn-hqr" id="Rra-jL-Wz4"/>
+                <outlet property="nickNameLabel" destination="gjo-dc-giw" id="O53-6X-cnn"/>
+                <outlet property="signinBtn" destination="kHa-Ru-thN" id="p9l-Ka-QOL"/>
+                <outlet property="telLabel" destination="wXo-rU-lWm" id="FaF-Zi-WbE"/>
+                <outletCollection property="gestureRecognizers" destination="SZC-EK-2VV" appends="YES" id="4Ox-Yi-wdk"/>
+            </connections>
+            <point key="canvasLocation" x="14.5" y="-105"/>
+        </view>
+        <tapGestureRecognizer id="SZC-EK-2VV">
+            <connections>
+                <action selector="tapHeaderViewClick:" destination="iN0-l3-epB" id="rvq-kw-Iw4"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="cen_renzheng" width="13" height="13"/>
+        <image name="cen_youjian" width="13" height="13"/>
+        <image name="morentouxiang" width="130" height="130"/>
+    </resources>
+</document>

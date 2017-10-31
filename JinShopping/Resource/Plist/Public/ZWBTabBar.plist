@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>controller</key>
+		<string>ZWBShoppingHomeController</string>
+		<key>title</key>
+		<string>首页</string>
+		<key>normalImage</key>
+		<string>menu1</string>
+		<key>selectImage</key>
+		<string>menu1_hover</string>
+	</dict>
+	<dict>
+		<key>controller</key>
+		<string>ZWBCarpoolingController</string>
+		<key>title</key>
+		<string>金云拼车</string>
+		<key>normalImage</key>
+		<string>menu2</string>
+		<key>selectImage</key>
+		<string>menu2_hover</string>
+	</dict>
+	<dict>
+		<key>controller</key>
+		<string>ZWBShoppingCategoryController</string>
+		<key>title</key>
+		<string>分类</string>
+		<key>normalImage</key>
+		<string>menu3</string>
+		<key>selectImage</key>
+		<string>menu3_hover</string>
+	</dict>
+	<dict>
+		<key>controller</key>
+		<string>ZWBMineController</string>
+		<key>title</key>
+		<string>我的</string>
+		<key>normalImage</key>
+		<string>menu4</string>
+		<key>selectImage</key>
+		<string>menu4_hover</string>
+	</dict>
+</array>
+</plist>
