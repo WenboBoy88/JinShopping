@@ -16,8 +16,9 @@
     
     
 }
-
+#pragma mark - ButtonClick
 - (IBAction)payMethodClick:(UIButton *)sender {
+    
 }
 
 

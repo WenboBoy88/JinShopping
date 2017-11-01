@@ -15,8 +15,16 @@
     [super awakeFromNib];
     // Initialization code
     
+    [ZWBSpeedy zwb_setupBezierPathCircularLayerWith:self.signLabel radiusSize:CGSizeMake(2, 2)];
 }
 
+
+#pragma mark - Getter Setter Methods
+- (void)setModel:(ZWBAddressModel *)model {
+    _model = model;
+    
+    
+}
 
 #pragma mark - Button Click
 - (IBAction)editClick:(UIButton *)sender {
@@ -24,6 +32,7 @@
 }
 
 - (IBAction)delClick:(UIButton *)sender {
+    
 }
 
 

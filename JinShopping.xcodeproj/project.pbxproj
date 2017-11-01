@@ -101,6 +101,7 @@
 		9A8A09BF1F974BA3007F5C04 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A09B61F974BA3007F5C04 /* SDCollectionViewCell.m */; };
 		9A8A09C01F974BA3007F5C04 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A09B81F974BA3007F5C04 /* SDCycleScrollView.m */; };
 		9A8A09C11F974BA3007F5C04 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A09BA1F974BA3007F5C04 /* UIView+SDExtension.m */; };
+		9A994F9A1FA95F8900D866B6 /* ZWBAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F991FA95F8800D866B6 /* ZWBAddressModel.m */; };
 		9AA083941FA22B3700FA0B66 /* ZWBStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA083921FA22B3700FA0B66 /* ZWBStarView.m */; };
 		9AA33C061F95B8870016EAC6 /* ZWBTabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AA33C051F95B8870016EAC6 /* ZWBTabBar.plist */; };
 		9AA33C091F95F3820016EAC6 /* ZWBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA33C081F95F3820016EAC6 /* ZWBBaseTableViewController.m */; };
@@ -359,6 +360,8 @@
 		9A8A09B81F974BA3007F5C04 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		9A8A09B91F974BA3007F5C04 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		9A8A09BA1F974BA3007F5C04 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		9A994F981FA95F8800D866B6 /* ZWBAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBAddressModel.h; sourceTree = "<group>"; };
+		9A994F991FA95F8800D866B6 /* ZWBAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBAddressModel.m; sourceTree = "<group>"; };
 		9AA083921FA22B3700FA0B66 /* ZWBStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBStarView.m; sourceTree = "<group>"; };
 		9AA083931FA22B3700FA0B66 /* ZWBStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBStarView.h; sourceTree = "<group>"; };
 		9AA33C051F95B8870016EAC6 /* ZWBTabBar.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ZWBTabBar.plist; sourceTree = "<group>"; };
@@ -1262,6 +1265,8 @@
 				9A2AFE9F1FA1B8C000A2ED56 /* ZWBTakeoutFoodOrderModel.m */,
 				9AEC853C1FA6C8420024ADC7 /* ZWBTakeoutEvalModel.h */,
 				9AEC853B1FA6C8410024ADC7 /* ZWBTakeoutEvalModel.m */,
+				9A994F981FA95F8800D866B6 /* ZWBAddressModel.h */,
+				9A994F991FA95F8800D866B6 /* ZWBAddressModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1831,6 +1836,7 @@
 				9AB9E2121F9DBC590094BC26 /* ZWBSettingController.m in Sources */,
 				9A45ED741F90526A00B4E108 /* NSString+AutoSize.m in Sources */,
 				9A4B83761F98F93E0049AAD8 /* ZWBMineWalletCell.m in Sources */,
+				9A994F9A1FA95F8900D866B6 /* ZWBAddressModel.m in Sources */,
 				9AEC854B1FA6F9470024ADC7 /* ZWBEditAddressCell.m in Sources */,
 				9A45ED7B1F90526A00B4E108 /* UILabel+ZWBAttributeTextTapAction.m in Sources */,
 				9AEC85601FA71F890024ADC7 /* ZWBTakeoutOrderInfoCell.m in Sources */,

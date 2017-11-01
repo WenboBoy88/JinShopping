@@ -68,15 +68,27 @@ static NSString *ZWBTakeoutSpecialCellID = @"ZWBTakeoutSpecialCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = nil;
+    if (indexPath.section == 0) { // 正常Cell
+        ZWBListTableCell *listCell = [tableView dequeueReusableCellWithIdentifier:ZWBListTableCellID];
+        if (!listCell) {
+            listCell = [[ZWBListTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ZWBListTableCellID isShowLogoImageView:NO];
+        }
+        listCell.desLabel.hidden = indexPath.section == 0 && indexPath.row == 0 ? YES : NO;
+        listCell.goImageView.hidden = indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2) ? NO : YES;
+        listCell.titleLabel.text = self.dataArray[indexPath.section][indexPath.row];
+        listCell.desLabel.text = self.contentArr[indexPath.section][indexPath.row];
+
+        cell = listCell;
+    } else {
+        ZWBTakeoutSpecialCell *sepcialCell = [tableView dequeueReusableCellWithIdentifier:ZWBTakeoutSpecialCellID];
+        if (!sepcialCell) {
+            sepcialCell = [[ZWBTakeoutSpecialCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ZWBListTableCellID];
+        }
+        sepcialCell.titleLabel.text = self.contentArr[indexPath.section][indexPath.row];
     
-    ZWBListTableCell *cell = [tableView dequeueReusableCellWithIdentifier:ZWBListTableCellID];
-    if (!cell) {
-        cell = [[ZWBListTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ZWBListTableCellID isShowLogoImageView:NO];
+        cell = sepcialCell;
     }
-    cell.desLabel.hidden = indexPath.section == 0 && indexPath.row == 0 ? YES : NO;
-    cell.goImageView.hidden = indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2) ? NO : YES;
-    cell.titleLabel.text = self.dataArray[indexPath.section][indexPath.row];
-    cell.desLabel.text = self.contentArr[indexPath.section][indexPath.row];
     
     return cell;
 }
@@ -116,6 +128,7 @@ static NSString *ZWBTakeoutSpecialCellID = @"ZWBTakeoutSpecialCell";
     if (!_dataArray) {
         _dataArray = [[NSMutableArray alloc] init];
         [_dataArray addObject:@[@"商家官网", @"店铺电话:", @"店铺地址:", @"营业时间:", @"配送服务:", @"店铺公告:", @"店铺认证:"]];
+        [_dataArray addObject:@[@""]];
     }
     return _dataArray;
 }
@@ -124,6 +137,7 @@ static NSString *ZWBTakeoutSpecialCellID = @"ZWBTakeoutSpecialCell";
     if (!_contentArr) {
         _contentArr = [[NSMutableArray alloc] init];
         [_contentArr addObject:@[@"http://www.baidu.com", @"156XXXXXXXX", @"新密市二幼", @"8:00 ~ 23:00", @"由本店提供配送服务", @"商品打折", @"已认证"]];
+        [_contentArr addObject:@[@""]];
     }
     return _contentArr;
 }
