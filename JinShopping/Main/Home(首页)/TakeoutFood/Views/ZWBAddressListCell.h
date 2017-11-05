@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *provinceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *codeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *signLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (weak, nonatomic) IBOutlet UIButton *delBtn;

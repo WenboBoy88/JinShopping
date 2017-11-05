@@ -7,7 +7,13 @@
 //
 
 #import "ZWBBaseTableViewController.h"
+// Model
+#import "ZWBAddressModel.h"
 
 @interface ZWBEditAdressController : ZWBBaseTableViewController
+
+@property (nonatomic, assign) BOOL isEdited;
+
+@property (nonatomic, strong) ZWBAddressModel *model;
 
 @end

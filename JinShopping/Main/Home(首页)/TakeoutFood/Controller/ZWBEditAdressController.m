@@ -7,6 +7,11 @@
 //
 
 #import "ZWBEditAdressController.h"
+// View
+#import "ZWBEditAddressCell.h"
+
+//
+static NSString *ZWBEditAddressCellID = @"ZWBEditAddressCell";
 
 @interface ZWBEditAdressController ()
 
@@ -16,7 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self setupBase];
+}
+
+#pragma mark - 初始化
+- (void)setupBase {
+    self.title = self.isEditing ? @"编辑地址" : @"添加地址";
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    
+    self.tableView registerNib:[<#(nullable UINib *)#>] forCellReuseIdentifier:<#(nonnull NSString *)#>
 }
 
 - (void)didReceiveMemoryWarning {
