@@ -16,12 +16,13 @@
     if (self = [super initWithFrame:frame]) {
         // 初始化界面
         
-        
+        [self setupUI];
     }
     return self;
 }
 
 - (void)setupUI {
+    self.width = SCREEN_WIDTH;
     self.backgroundColor = COLOR_MAIN_BG;
     
     UILabel *dispatchTitleLabel = [[UILabel alloc] init];
@@ -83,6 +84,9 @@
     .rightEqualToView(self)
     .bottomEqualToView(self)
     .widthIs(90.0f);
+    
+    [self setupAutoHeightWithBottomView:payBtn bottomMargin:0];
+    [self layoutSubviews];
 }
 
 #pragma mark - Button Click

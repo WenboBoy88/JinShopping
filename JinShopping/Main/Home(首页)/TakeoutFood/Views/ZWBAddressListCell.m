@@ -24,8 +24,15 @@
 }
 
 - (IBAction)delClick:(UIButton *)sender {
+    
 }
 
+
+- (void)setModel:(ZWBAddressModel *)model {
+    _model = model;
+    
+    
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

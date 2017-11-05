@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZWBAddressModel.h"
 
 @interface ZWBAddressListCell : UITableViewCell
 
@@ -20,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (weak, nonatomic) IBOutlet UIButton *delBtn;
 
+@property (nonatomic, strong) ZWBAddressModel *model;
 
 @end

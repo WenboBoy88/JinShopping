@@ -10,12 +10,13 @@
 
 @implementation ZWBFactory
 
-+ (UILabel *)creatLabelWithFrame:(CGRect)frame text:(NSString *)text{
++ (UILabel *)creatLabelWithFrame:(CGRect)frame text:(NSString *)text textColor:(UIColor *)textColor font:(CGFloat)font{
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.text = text;
+    label.textColor = textColor ? textColor : [UIColor blackColor];
     label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 0;
-    label.font = [UIFont systemFontOfSize:15];
+    label.font = [UIFont systemFontOfSize:font];
     return label;
 }
 

@@ -12,7 +12,10 @@
 
 //这个类的功能就是创建label 和button
 + (UILabel *)creatLabelWithFrame:(CGRect)frame
-                            text:(NSString *)text ;
+                            text:(NSString *)text
+                       textColor:(UIColor *)textColor
+                            font:(CGFloat)font;
+
 //创建button可以创建 标题按钮和 图片按钮
 + (UIButton *)creatButtonWithFrame:(CGRect)frame
                            bgColor:(UIColor *)bgColor

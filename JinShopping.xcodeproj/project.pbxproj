@@ -71,6 +71,7 @@
 		9A4CCC981F9E3AB700C821E2 /* ZWBInputNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CCC971F9E3AB700C821E2 /* ZWBInputNormalCell.m */; };
 		9A4CCC9C1F9E3F0700C821E2 /* ZWBUploadPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CCC9A1F9E3F0700C821E2 /* ZWBUploadPictureCell.m */; };
 		9A4CCC9D1F9E3F0700C821E2 /* ZWBUploadPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4CCC9B1F9E3F0700C821E2 /* ZWBUploadPictureCell.xib */; };
+		9A52930E1FAEE17100E39693 /* ZWBAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52930D1FAEE17100E39693 /* ZWBAddressModel.m */; };
 		9A6747B41F944F9300891A47 /* ZWBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6747B11F944F9300891A47 /* ZWBNavigationController.m */; };
 		9A6747B51F944F9300891A47 /* ZWBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6747B31F944F9300891A47 /* ZWBTabBarController.m */; };
 		9A6747B81F944FBD00891A47 /* ZWBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6747B71F944FBD00891A47 /* ZWBTabBar.m */; };
@@ -301,6 +302,8 @@
 		9A4CCC991F9E3F0700C821E2 /* ZWBUploadPictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBUploadPictureCell.h; sourceTree = "<group>"; };
 		9A4CCC9A1F9E3F0700C821E2 /* ZWBUploadPictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBUploadPictureCell.m; sourceTree = "<group>"; };
 		9A4CCC9B1F9E3F0700C821E2 /* ZWBUploadPictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBUploadPictureCell.xib; sourceTree = "<group>"; };
+		9A52930C1FAEE17100E39693 /* ZWBAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBAddressModel.h; sourceTree = "<group>"; };
+		9A52930D1FAEE17100E39693 /* ZWBAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBAddressModel.m; sourceTree = "<group>"; };
 		9A6747B01F944F9300891A47 /* ZWBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBNavigationController.h; sourceTree = "<group>"; };
 		9A6747B11F944F9300891A47 /* ZWBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBNavigationController.m; sourceTree = "<group>"; };
 		9A6747B21F944F9300891A47 /* ZWBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBTabBarController.h; sourceTree = "<group>"; };
@@ -1239,6 +1242,8 @@
 				9AEC85241FA6C7C20024ADC7 /* ZWBTakeoutEvalController.m */,
 				9AEC85281FA6C7C30024ADC7 /* ZWBTakeoutStoreInfoController.h */,
 				9AEC85261FA6C7C30024ADC7 /* ZWBTakeoutStoreInfoController.m */,
+				9AEC85291FA6C7C30024ADC7 /* ZWBStoreMapController.h */,
+				9AEC852B1FA6C7C40024ADC7 /* ZWBStoreMapController.m */,
 				9AEC852E1FA6C7C40024ADC7 /* ZWBTakeoutGoodsDetailController.h */,
 				9AEC85231FA6C7C20024ADC7 /* ZWBTakeoutGoodsDetailController.m */,
 				9AEC852F1FA6C7C40024ADC7 /* ZWBAdressListController.h */,
@@ -1247,8 +1252,6 @@
 				9AEC85301FA6C7C40024ADC7 /* ZWBEditAdressController.m */,
 				9AEC85311FA6C7C50024ADC7 /* ZWBAffirmPayController.h */,
 				9AEC852C1FA6C7C40024ADC7 /* ZWBAffirmPayController.m */,
-				9AEC85291FA6C7C30024ADC7 /* ZWBStoreMapController.h */,
-				9AEC852B1FA6C7C40024ADC7 /* ZWBStoreMapController.m */,
 				9AEC85321FA6C7C50024ADC7 /* ZWBSubmitOrderController.h */,
 				9AEC852A1FA6C7C40024ADC7 /* ZWBSubmitOrderController.m */,
 			);
@@ -1262,6 +1265,8 @@
 				9A2AFE9F1FA1B8C000A2ED56 /* ZWBTakeoutFoodOrderModel.m */,
 				9AEC853C1FA6C8420024ADC7 /* ZWBTakeoutEvalModel.h */,
 				9AEC853B1FA6C8410024ADC7 /* ZWBTakeoutEvalModel.m */,
+				9A52930C1FAEE17100E39693 /* ZWBAddressModel.h */,
+				9A52930D1FAEE17100E39693 /* ZWBAddressModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1831,6 +1836,7 @@
 				9AB9E2121F9DBC590094BC26 /* ZWBSettingController.m in Sources */,
 				9A45ED741F90526A00B4E108 /* NSString+AutoSize.m in Sources */,
 				9A4B83761F98F93E0049AAD8 /* ZWBMineWalletCell.m in Sources */,
+				9A52930E1FAEE17100E39693 /* ZWBAddressModel.m in Sources */,
 				9AEC854B1FA6F9470024ADC7 /* ZWBEditAddressCell.m in Sources */,
 				9A45ED7B1F90526A00B4E108 /* UILabel+ZWBAttributeTextTapAction.m in Sources */,
 				9AEC85601FA71F890024ADC7 /* ZWBTakeoutOrderInfoCell.m in Sources */,
