@@ -57,7 +57,7 @@
 
 
 /**
- label首行缩进
+ Label首行缩进
  
  @param label label
  @param emptylen 缩进比

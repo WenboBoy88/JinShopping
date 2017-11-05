@@ -15,6 +15,10 @@ static NSString *ZWBEditAddressCellID = @"ZWBEditAddressCell";
 
 @interface ZWBEditAdressController ()
 
+@property (nonatomic, strong) NSArray *titleArr;
+@property (nonatomic, strong) NSMutableArray *contentArr;
+@property (nonatomic, strong) NSMutableArray *idsArr;
+
 @end
 
 @implementation ZWBEditAdressController
@@ -23,6 +27,8 @@ static NSString *ZWBEditAddressCellID = @"ZWBEditAddressCell";
     [super viewDidLoad];
 
     [self setupBase];
+    
+    [self fillData];
 }
 
 #pragma mark - 初始化
@@ -31,8 +37,75 @@ static NSString *ZWBEditAddressCellID = @"ZWBEditAddressCell";
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+
+    [self.tableView registerClass:[ZWBEditAddressCell class] forCellReuseIdentifier:ZWBEditAddressCellID];
+}
+
+#pragma mark - 填充数据
+- (void)fillData {
     
-    self.tableView registerNib:[<#(nullable UINib *)#>] forCellReuseIdentifier:<#(nonnull NSString *)#>
+}
+
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = nil;
+    if (indexPath.row == self.titleArr.count - 1) {
+        ZWBEditAddressCell *selectCell = [tableView dequeueReusableCellWithIdentifier:ZWBEditAddressCellID forIndexPath:indexPath];
+        
+        cell = selectCell;
+    } else {
+        
+    }
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 180.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ZWBEditAdressController *editVC = [[ZWBEditAdressController alloc] init];
+    editVC.model = self.dataArray[indexPath.row];
+    [self.navigationController pushViewController:editVC animated:YES];
+}
+
+
+#pragma mark - Lazy load
+- (NSArray *)titleArr {
+    if (!_titleArr) {
+        _titleArr = @[@"姓名", @"电话", @"省份", @"城市", @"区县", @"位置", @"地址", @"邮编", @""];
+    }
+    return _titleArr;
+}
+
+- (NSMutableArray *)contentArr {
+    if (!_contentArr) {
+        _contentArr = [[NSMutableArray alloc] init];
+    }
+    return _contentArr;
+}
+
+- (NSMutableArray *)idsArr {
+    if (!_idsArr) {
+        _idsArr = [[NSMutableArray alloc] init];
+    }
+    return _idsArr;
 }
 
 - (void)didReceiveMemoryWarning {

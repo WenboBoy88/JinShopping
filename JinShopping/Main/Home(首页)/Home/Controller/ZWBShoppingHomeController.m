@@ -9,10 +9,10 @@
 #import "ZWBShoppingHomeController.h"
 
 // Controllers
-#import "PYSearchViewController.h"
+#import "PYSearchViewController.h"    // 搜索
 #import "ZWBSearchViewController.h"
-#import "ZWBTakeoutFoodController.h" // 外卖栏目
-
+#import "ZWBTakeoutFoodController.h"  // 外卖栏目
+#import "ZWBShoppingMallController.h" // 商城
 // Models
 
 // Views
@@ -100,8 +100,10 @@ static NSString *ZWBHomeCategoryCellID = @"ZWBHomeCategoryCell";
 }
 // 定位
 - (void)locationItemClick {
-    
+    ZWBShoppingMallController *mallVC = [[ZWBShoppingMallController alloc] init];
+    [self.navigationController pushViewController:mall animated:YES];
 }
+
 // 快报
 - (void)newsflashItemClick {
     
