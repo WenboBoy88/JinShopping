@@ -7,8 +7,15 @@
 //
 
 #import "ZWBAdressListController.h"
+// Controller
+#import "ZWBEditAdressController.h"
+
+// Views
 #import "ZWBAddressListCell.h"
 
+// Model
+
+// Other
 
 static NSString *ZWBAddressListCellID = @"ZWBAddressListCell";
 
@@ -31,12 +38,12 @@ static NSString *ZWBAddressListCellID = @"ZWBAddressListCell";
     [self loadData];
 }
 
+#pragma mark - 初始化操作
 
 #pragma mark - 导航栏处理
 - (void)setupBase {
-    self.view.backgroundColor = COLOR_CLEAR;
-    self.navigationItem.title = @"";
-    
+    self.view.backgroundColor = COLOR_MAIN_BG;
+    self.navigationItem.title = @"地址选择";
     
 }
 
@@ -51,6 +58,7 @@ static NSString *ZWBAddressListCellID = @"ZWBAddressListCell";
 
 #pragma mark - 加载数据
 - (void)loadData {
+    
     self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
         
     }];
@@ -69,6 +77,7 @@ static NSString *ZWBAddressListCellID = @"ZWBAddressListCell";
     
     ZWBAddressListCell *cell = [tableView dequeueReusableCellWithIdentifier:ZWBAddressListCellID forIndexPath:indexPath];
     cell.model = self.dataArray[indexPath.row];
+    
     return cell;
 }
 
@@ -83,6 +92,9 @@ static NSString *ZWBAddressListCellID = @"ZWBAddressListCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    ZWBEditAdressController *editVC = [[ZWBEditAdressController alloc] init];
+    editVC.model = self.dataArray[indexPath.row];
+    [self.navigationController pushViewController:editVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

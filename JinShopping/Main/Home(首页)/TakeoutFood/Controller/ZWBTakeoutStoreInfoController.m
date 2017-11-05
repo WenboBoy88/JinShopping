@@ -86,7 +86,7 @@ static NSString *ZWBTakeoutSpecialCellID = @"ZWBTakeoutSpecialCell";
             sepcialCell = [[ZWBTakeoutSpecialCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ZWBListTableCellID];
         }
         sepcialCell.titleLabel.text = self.contentArr[indexPath.section][indexPath.row];
-    
+
         cell = sepcialCell;
     }
     
