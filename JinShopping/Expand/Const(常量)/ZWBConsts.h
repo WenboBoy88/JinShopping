@@ -11,13 +11,13 @@
 @interface ZWBConsts : NSObject
 
 /** 常量数 */
-UIKIT_EXTERN CGFloat const DCMargin;
+UIKIT_EXTERN CGFloat const ZWB_Margin;
 /** 导航栏高度 */
-UIKIT_EXTERN CGFloat const DCNaviH;
+UIKIT_EXTERN CGFloat const ZWB_NaviH;
 /** 底部tab高度 */
-UIKIT_EXTERN CGFloat const DCBottomTabH;
+UIKIT_EXTERN CGFloat const ZWB_BottomTabH;
 /** 顶部Nav高度+指示器 */
-UIKIT_EXTERN CGFloat const DCTopNavH;
+UIKIT_EXTERN CGFloat const ZWB_TopNavH;
 
 
 @end

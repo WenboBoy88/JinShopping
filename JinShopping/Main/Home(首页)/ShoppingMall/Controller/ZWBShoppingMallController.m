@@ -10,17 +10,30 @@
 
 // Views
 #import "ZWBHoverFlowLayout.h"
-#import "ZWBShoppingMallCell.h"
+#import "ZWBShoppingMallCell.h"     // 列表
+#import "ZWBCustionHeadView.h"      // 头视图
+
+// Vendors
+#import "XWDrawerAnimator.h"
+#import "UIViewController+XWTransition.h"
 
 // Ohters
 
+static NSString *ZWBCustionHeadViewID = @"ZWBCustionHeadView";
 static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 
-@interface ZWBShoppingMallController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ZWBShoppingMallController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout> {
+    CGFloat _lastContentOffset; // 滚动的偏移量
+}
+
 /* 搜索 */
 @property (nonatomic, strong) UIButton *searchBtn;
 /* 滚回顶部按钮 */
-@property (strong , nonatomic)UIButton *backTopButton;
+@property (strong, nonatomic) UIButton *backTopButton;
+/* 足迹按钮 */
+@property (strong, nonatomic) UIButton *footprintButton;
+/* 具体商品数据 */
+@property (strong, nonatomic) NSMutableArray<ZWBShoppingMallModel *> *itemArr;
 
 @end
 
@@ -30,7 +43,9 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setupBase];
+    [self setupNav];
+    [self setupUI];
+    [self loadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -41,22 +56,34 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 }
 
 #pragma mark - 导航栏
-- (void)setupBase {
+- (void)setupNav {
+    self.navigationItem.title = @"商城";
+
     self.searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.searchBtn.frame = CGRectMake(0, 0, 40, 40);
     [self.searchBtn setImage:[UIImage imageNamed:@"waimai_search"] forState:UIControlStateNormal];
     [self.searchBtn addTarget:self action:@selector(searchClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.searchBtn];
-    
-    self.navigationItem.title = @"商城";
 }
+
+#pragma mark - Initialize
+- (void)setupUI {
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor = COLOR_MAIN_BG;
+
+}
+
 #pragma mark - Button Click
 // 搜索
 - (void)searchClick:(UIButton *)button {
     
 }
 
-
+#pragma mark - Load Data
+- (void)loadData {
+    
+}
 
 #pragma mark - 悬浮按钮
 - (void)setupSuspendView {
@@ -87,11 +114,7 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
     UICollectionReusableView *reusableview = nil;
     if (kind == UICollectionElementKindSectionHeader){
         
-        DCCustionHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCCustionHeadViewID forIndexPath:indexPath];
-        __weak typeof(self)weakSelf = self;
-        headerView.filtrateClickBlock = ^{//点击了筛选
-            [weakSelf filtrateButtonClick];
-        };
+        ZWBCustionHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ZWBCustionHeadViewID forIndexPath:indexPath];
         reusableview = headerView;
     }
     return reusableview;
@@ -99,13 +122,20 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 
 #pragma mark - item宽高
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return (_isSwitchGrid) ? CGSizeMake(ScreenW, 120) : CGSizeMake((ScreenW - 4)/2, (ScreenW - 4)/2 + 60);//列表、网格Cell
+    
+    return CGSizeMake((SCREEN_WIDTH - 4)/2, (SCREEN_WIDTH - 4)/2 + 60);
 }
 
 #pragma mark - head宽高
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(ScreenW, 40); //头部
+    return CGSizeMake(SCREEN_WIDTH, 40); //头部
 }
+
+#pragma mark - foot宽高
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    return CGSizeZero;
+}
+
 
 #pragma mark - 边间距属性默认为0
 #pragma mark - X间距
@@ -115,7 +145,7 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 }
 #pragma mark - Y间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return (_isSwitchGrid) ? 0 : 4;
+    return  0;
 }
 
 
@@ -123,21 +153,21 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
     NSLog(@"点击了商品第%zd",indexPath.row);
     
     
-    DCGoodDetailViewController *dcVc = [[DCGoodDetailViewController alloc] init];
-    dcVc.goodTitle = _setItem[indexPath.row].main_title;
-    dcVc.goodPrice = _setItem[indexPath.row].price;
-    dcVc.goodSubtitle = _setItem[indexPath.row].goods_title;
-    dcVc.shufflingArray = _setItem[indexPath.row].images;
-    dcVc.goodImageView = _setItem[indexPath.row].image_url;
-    
-    [self.navigationController pushViewController:dcVc animated:YES];
-    
-    __weak typeof(self)weakSelf = self;
-    [UIView animateWithDuration:0.3 animations:^{
-        weakSelf.colonView.dc_x = ScreenW;
-    }completion:^(BOOL finished) {
-        [weakSelf.colonView removeFromSuperview];
-    }];
+//    DCGoodDetailViewController *dcVc = [[DCGoodDetailViewController alloc] init];
+//    dcVc.goodTitle = _setItem[indexPath.row].main_title;
+//    dcVc.goodPrice = _setItem[indexPath.row].price;
+//    dcVc.goodSubtitle = _setItem[indexPath.row].goods_title;
+//    dcVc.shufflingArray = _setItem[indexPath.row].images;
+//    dcVc.goodImageView = _setItem[indexPath.row].image_url;
+//
+//    [self.navigationController pushViewController:dcVc animated:YES];
+//
+//    __weak typeof(self)weakSelf = self;
+//    [UIView animateWithDuration:0.3 animations:^{
+//        weakSelf.colonView.dc_x = ScreenW;
+//    }completion:^(BOOL finished) {
+//        [weakSelf.colonView removeFromSuperview];
+//    }];
 }
 
 
@@ -153,12 +183,12 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
     
     if(scrollView.contentOffset.y > _lastContentOffset){
         [self.navigationController setNavigationBarHidden:YES animated:YES];
-        self.collectionView.frame = CGRectMake(0, 20, ScreenW, ScreenH - 20);
+        self.collectionView.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
         self.view.backgroundColor = [UIColor whiteColor];
-    }else{
+    } else {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
-        self.collectionView.frame = CGRectMake(0, DCTopNavH, ScreenW, ScreenH - DCTopNavH);
-        self.view.backgroundColor = DCBGColor;
+        self.collectionView.frame = CGRectMake(0, ZWB_TopNavH, SCREEN_WIDTH, SCREEN_HEIGHT - ZWB_TopNavH);
+        self.view.backgroundColor = COLOR_MAIN_BG;
     }
 }
 
@@ -166,65 +196,30 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     //判断回到顶部按钮是否隐藏
-    _backTopButton.hidden = (scrollView.contentOffset.y > ScreenH) ? NO : YES;
+    _backTopButton.hidden = (scrollView.contentOffset.y > SCREEN_HEIGHT) ? NO : YES;
     
     __weak typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.25 animations:^{
         __strong typeof(weakSelf)strongSelf = weakSelf;
-        strongSelf.footprintButton.dc_y = (strongSelf.backTopButton.hidden == YES) ? ScreenH - 60 : ScreenH - 110;
+        strongSelf.footprintButton.zwb_bottom = (strongSelf.backTopButton.hidden == YES) ? SCREEN_HEIGHT - 60 : SCREEN_HEIGHT - 110;
     }];
     
 }
 
-#pragma mark - 冒号工具View
-- (void)setUpColonInsView:(UICollectionViewCell *)cell
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{ //单列
-        _colonView = [[DCColonInsView alloc] init];
-        
-    });
-    [cell addSubview:_colonView];
-    
-    _colonView.frame = CGRectMake(cell.dc_width, 0, cell.dc_width - 120, cell.dc_height);
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        _colonView.dc_x = 120;
-    }];
-}
 
 #pragma mark - 点击事件
 
-#pragma mark - 切换视图按钮点击
-- (void)switchViewButtonBarItemBtnClick:(UIButton *)button
-{
-    button.selected = !button.selected;
-    _isSwitchGrid = !_isSwitchGrid;
-    
-    [self.collectionView reloadData];
-}
 
 #pragma mark - collectionView滚回顶部
 - (void)ScrollToTop
 {
     [self.collectionView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
-#pragma mark - 商品浏览足迹
-- (void)footprintButtonClick
-{
-    [self setUpAlterViewControllerWith:[DCFootprintGoodsViewController alloc] WithDistance:ScreenW * 0.4];
-}
-
-#pragma mark - 商品筛选
-- (void)filtrateButtonClick
-{
-    [DCSildeBarView dc_showSildBarViewController];
-}
 
 
 #pragma mark - 转场动画弹出控制器
-- (void)setUpAlterViewControllerWith:(UIViewController *)vc WithDistance:(CGFloat)distance
-{
+- (void)setUpAlterViewControllerWith:(UIViewController *)vc WithDistance:(CGFloat)distance {
+    
     XWDrawerAnimatorDirection direction = XWDrawerAnimatorDirectionRight;
     XWDrawerAnimator *animator = [XWDrawerAnimator xw_animatorWithDirection:direction moveDistance:distance];
     animator.parallaxEnable = YES;
@@ -252,16 +247,20 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
 
-//        [_collectionView registerClass:[DCCustionHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCCustionHeadViewID]; //头部View
+        [_collectionView registerClass:[ZWBCustionHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ZWBCustionHeadViewID]; //头部View
         [_collectionView registerClass:[ZWBShoppingMallCell class] forCellWithReuseIdentifier:ZWBShoppingMallCellID];//cell
-//        [_collectionView registerClass:[DCListGridCell class] forCellWithReuseIdentifier:DCListGridCellID];//cell
         [self.view addSubview:_collectionView];
         _collectionView.sd_layout.spaceToSuperView(UIEdgeInsetsZero);
     }
     return _collectionView;
 }
 
-
+- (NSMutableArray<ZWBShoppingMallModel *> *)itemArr {
+    if (!_itemArr) {
+        _itemArr = [[NSMutableArray alloc] init];
+    }
+    return _itemArr;
+}
 
 
 - (void)didReceiveMemoryWarning {

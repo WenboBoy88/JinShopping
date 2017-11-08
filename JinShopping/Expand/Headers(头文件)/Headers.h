@@ -33,5 +33,6 @@
 #import "ZWBSpeedy.h"
 #import "ZWBFactory.h"
 #import "ZWBUtil.h"
+#import "ZWBConsts.h"
 
 #endif /* Headers_h */

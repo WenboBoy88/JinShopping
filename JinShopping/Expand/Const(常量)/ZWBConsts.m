@@ -11,13 +11,13 @@
 @implementation ZWBConsts
 
 /** 常量数 */
-CGFloat const DCMargin = 10;
+CGFloat const ZWB_Margin     = 10;
 /** 导航栏高度 */
-CGFloat const DCNaviH = 44;
+CGFloat const ZWB_NaviH      = 44;
 /** 底部tab高度 */
-CGFloat const DCBottomTabH = 49;
+CGFloat const ZWB_BottomTabH = 49;
 /** 顶部Nav高度+指示器 */
-CGFloat const DCTopNavH = 64;
+CGFloat const ZWB_TopNavH    = 64;
 
 
 @end

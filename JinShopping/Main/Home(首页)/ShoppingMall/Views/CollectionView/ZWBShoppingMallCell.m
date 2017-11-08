@@ -23,18 +23,14 @@
 
 @interface ZWBShoppingMallCell ()
 
-/* 优惠套装 */
-@property (strong , nonatomic)UIImageView *freeSuitImageView;
 /* 商品图片 */
-@property (strong , nonatomic)UIImageView *gridImageView;
+@property (strong , nonatomic) UIImageView *gridImageView;
 /* 商品标题 */
-@property (strong , nonatomic)UILabel *gridLabel;
-/* 自营 */
-@property (strong , nonatomic)UIImageView *autotrophyImageView;
+@property (strong , nonatomic) UILabel *gridLabel;
 /* 价格 */
-@property (strong , nonatomic)UILabel *priceLabel;
-/* 评价数量 */
-@property (strong , nonatomic)UILabel *commentNumLabel;
+@property (strong , nonatomic) UILabel *priceLabel;
+/* 销售数量 */
+@property (strong , nonatomic) UILabel *saleNumLabel;
 
 @end
 
@@ -55,34 +51,26 @@
 - (void)setUpUI
 {
     self.backgroundColor = [UIColor whiteColor];
-    _freeSuitImageView = [[UIImageView alloc] init];
-    _freeSuitImageView.image = [UIImage imageNamed:@"taozhuang_tag"];
-    [self addSubview:_freeSuitImageView];
+    self.gridImageView = [[UIImageView alloc] init];
+    self.gridImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self addSubview:self.gridImageView];
     
-    _autotrophyImageView = [[UIImageView alloc] init];
-    [self addSubview:_autotrophyImageView];
-    _autotrophyImageView.image = [UIImage imageNamed:@"detail_title_ziying_tag"];
+    self.gridLabel = [[UILabel alloc] init];
+    self.gridLabel.font = PFR_FONT(14.0f);
+    self.gridLabel.numberOfLines = 1;
+    [self addSubview:self.gridLabel];
     
-    _gridImageView = [[UIImageView alloc] init];
-    _gridImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [self addSubview:_gridImageView];
+    self.priceLabel = [[UILabel alloc] init];
+    self.priceLabel.font = PFR_FONT(13.0f);
+    self.priceLabel.textColor = [UIColor redColor];
+    [self addSubview:self.priceLabel];
     
-    _gridLabel = [[UILabel alloc] init];
-    _gridLabel.font = PFR_FONT(14.0f);
-    _gridLabel.numberOfLines = 1;
-    [self addSubview:_gridLabel];
-    
-    _priceLabel = [[UILabel alloc] init];
-    _priceLabel.font = PFR_FONT(15.0f);
-    _priceLabel.textColor = [UIColor redColor];
-    [self addSubview:_priceLabel];
-    
-    _commentNumLabel = [[UILabel alloc] init];
+    self.saleNumLabel = [[UILabel alloc] init];
     NSInteger pNum = arc4random() % 10000;
-    _commentNumLabel.text = [NSString stringWithFormat:@"%zd人已评价",pNum];
-    _commentNumLabel.font = PFR_FONT(10.0f);
-    _commentNumLabel.textColor = [UIColor darkGrayColor];
-    [self addSubview:_commentNumLabel];
+    self.saleNumLabel.text = [NSString stringWithFormat:@"已售%zd单",pNum];
+    self.saleNumLabel.font = PFR_FONT(14.0f);
+    self.saleNumLabel.textColor = [UIColor darkGrayColor];
+    [self addSubview:self.saleNumLabel];
 }
 
 - (void)layoutSubviews

@@ -15,7 +15,8 @@
 // Models
 
 // Views
-#import "DCCustionButton.h"
+#import "ZWBCustionButton.h"
+
 // Vendors
 
 // Categories
@@ -25,13 +26,13 @@
 @interface ZWBCustionHeadView ()
 
 /** 记录上一次选中的Button */
-@property (nonatomic , weak) DCCustionButton *selectBtn;
+@property (nonatomic , strong) ZWBCustionButton *selectBtn;
 /** 记录上一次选中的Button底部View */
-@property (nonatomic , strong)UIView *selectBottomRedView;
+@property (nonatomic , strong) UIView *selectBottomRedView;
 
 @end
 
-@implementation DCCustionHeadView
+@implementation ZWBCustionHeadView
 
 #pragma mark - Intial
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -47,13 +48,13 @@
 - (void)setUpUI
 {
     self.backgroundColor = [UIColor whiteColor];
-    NSArray *titles = @[@"推荐",@"价格",@"销量",@"筛选"];
+    NSArray *titles = @[@"水果餐饮",@"家用电器",@"数码产品",@"汽车配件"];
     NSArray *noImage = @[@"icon_Arrow2",@"",@"",@"icon_shaixuan"];
-    CGFloat btnW = self.dc_width / titles.count;
-    CGFloat btnH = self.dc_height;
+    CGFloat btnW = self.zwb_width / titles.count;
+    CGFloat btnH = self.zwb_height;
     CGFloat btnY = 0;
     for (NSInteger i = 0; i < titles.count; i++) {
-        DCCustionButton *button = [DCCustionButton buttonWithType:UIButtonTypeCustom];
+        ZWBCustionButton *button = [ZWBCustionButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:titles[i] forState:UIControlStateNormal];
         [self addSubview:button];
         [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
@@ -66,12 +67,11 @@
             [self buttonClick:button]; //默认选择第一个
         }
     }
-    
-    [DCSpeedy dc_setUpAcrossPartingLineWith:self WithColor:[[UIColor lightGrayColor]colorWithAlphaComponent:0.4]];
+    [ZWBSpeedy zwb_setupAcrossPartingLineWith:self lineColor:[[UIColor lightGrayColor]colorWithAlphaComponent:0.4]];
 }
 
 #pragma mark - 按钮点击
-- (void)buttonClick:(DCCustionButton *)button
+- (void)buttonClick:(ZWBCustionButton *)button
 {
     if (button.tag == 3 + AuxiliaryNum) { //筛选
         !_filtrateClickBlock ? : _filtrateClickBlock();
@@ -83,10 +83,10 @@
         UIView *bottomRedView = [[UIView alloc] init];
         [self addSubview:bottomRedView];
         bottomRedView.backgroundColor = [UIColor redColor];
-        bottomRedView.dc_width = button.dc_width;
-        bottomRedView.dc_height = 3;
-        bottomRedView.dc_y = button.dc_height - bottomRedView.dc_height;
-        bottomRedView.dc_x = button.dc_x;
+        bottomRedView.zwb_width = button.zwb_width;
+        bottomRedView.zwb_height = 3;
+        bottomRedView.zwb_left = button.zwb_height - bottomRedView.zwb_height;
+        bottomRedView.zwb_left = button.zwb_left;
         bottomRedView.hidden = NO;
         
         _selectBtn = button;
