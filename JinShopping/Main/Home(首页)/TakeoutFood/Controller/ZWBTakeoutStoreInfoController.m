@@ -40,7 +40,7 @@ static NSString *ZWBTakeoutSpecialCellID = @"ZWBTakeoutSpecialCell";
 #pragma mark - 导航栏处理
 - (void)setupBase {
     self.view.backgroundColor = COLOR_CLEAR;
-    self.navigationItem.title = @"";
+    self.navigationItem.title = @"店铺信息";
     
 }
 

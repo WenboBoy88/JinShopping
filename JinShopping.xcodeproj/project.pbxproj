@@ -44,6 +44,8 @@
 		9A153D181FB3550000EE2CC9 /* XWFilterTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A153CF81FB3550000EE2CC9 /* XWFilterTransitionView.m */; };
 		9A153D191FB3550000EE2CC9 /* XWMagicMoveAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A153CFB1FB3550000EE2CC9 /* XWMagicMoveAnimator.m */; };
 		9A153D1C1FB3572600EE2CC9 /* ZWBDetailShoppingMallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A153D1B1FB3572600EE2CC9 /* ZWBDetailShoppingMallController.m */; };
+		9A153D1F1FB490E400EE2CC9 /* ZWBStoreGoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A153D1E1FB490E400EE2CC9 /* ZWBStoreGoodsController.m */; };
+		9A153D221FB4916900EE2CC9 /* ZWBStoreCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A153D211FB4916900EE2CC9 /* ZWBStoreCommentController.m */; };
 		9A26A1A81F989F560022629E /* ZWBMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A26A1A71F989F560022629E /* ZWBMineHeaderView.m */; };
 		9A26A1AB1F98A52F0022629E /* ZWBMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A26A1AA1F98A52F0022629E /* ZWBMineHeaderView.xib */; };
 		9A26A1AE1F98A8DE0022629E /* ZWBSpeedy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A26A1AD1F98A8DE0022629E /* ZWBSpeedy.m */; };
@@ -298,6 +300,10 @@
 		9A153CFB1FB3550000EE2CC9 /* XWMagicMoveAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWMagicMoveAnimator.m; sourceTree = "<group>"; };
 		9A153D1A1FB3572600EE2CC9 /* ZWBDetailShoppingMallController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBDetailShoppingMallController.h; sourceTree = "<group>"; };
 		9A153D1B1FB3572600EE2CC9 /* ZWBDetailShoppingMallController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBDetailShoppingMallController.m; sourceTree = "<group>"; };
+		9A153D1D1FB490E400EE2CC9 /* ZWBStoreGoodsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBStoreGoodsController.h; sourceTree = "<group>"; };
+		9A153D1E1FB490E400EE2CC9 /* ZWBStoreGoodsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBStoreGoodsController.m; sourceTree = "<group>"; };
+		9A153D201FB4916900EE2CC9 /* ZWBStoreCommentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBStoreCommentController.h; sourceTree = "<group>"; };
+		9A153D211FB4916900EE2CC9 /* ZWBStoreCommentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBStoreCommentController.m; sourceTree = "<group>"; };
 		9A26A1A61F989F560022629E /* ZWBMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBMineHeaderView.h; sourceTree = "<group>"; };
 		9A26A1A71F989F560022629E /* ZWBMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBMineHeaderView.m; sourceTree = "<group>"; };
 		9A26A1AA1F98A52F0022629E /* ZWBMineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBMineHeaderView.xib; sourceTree = "<group>"; };
@@ -1887,6 +1893,10 @@
 				9A153D1B1FB3572600EE2CC9 /* ZWBDetailShoppingMallController.m */,
 				9AA230D71FB454A700C838D9 /* ZWBStoreHomeController.h */,
 				9AA230D81FB454A700C838D9 /* ZWBStoreHomeController.m */,
+				9A153D1D1FB490E400EE2CC9 /* ZWBStoreGoodsController.h */,
+				9A153D1E1FB490E400EE2CC9 /* ZWBStoreGoodsController.m */,
+				9A153D201FB4916900EE2CC9 /* ZWBStoreCommentController.h */,
+				9A153D211FB4916900EE2CC9 /* ZWBStoreCommentController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2214,6 +2224,7 @@
 				9A153D131FB3550000EE2CC9 /* XWFilterAnimator+XWMod.m in Sources */,
 				9AEC85391FA6C7C50024ADC7 /* ZWBAffirmPayController.m in Sources */,
 				9A45EDA11F90541000B4E108 /* ZWBUserInfoManager.m in Sources */,
+				9A153D221FB4916900EE2CC9 /* ZWBStoreCommentController.m in Sources */,
 				9A8A09C01F974BA3007F5C04 /* SDCycleScrollView.m in Sources */,
 				9A153D041FB3550000EE2CC9 /* XWCircleSpreadAnimator.m in Sources */,
 				9A153D101FB3550000EE2CC9 /* XWFilterAnimator+XWCopyMachine.m in Sources */,
@@ -2314,6 +2325,7 @@
 				9AEC853D1FA6C8420024ADC7 /* ZWBTakeoutEvalModel.m in Sources */,
 				9A8A09BE1F974BA3007F5C04 /* TAPageControl.m in Sources */,
 				9A8A09C11F974BA3007F5C04 /* UIView+SDExtension.m in Sources */,
+				9A153D1F1FB490E400EE2CC9 /* ZWBStoreGoodsController.m in Sources */,
 				9AD487161F99EA5700726ED4 /* ZWBMineSectionItemCell.m in Sources */,
 				9A2AFEC01FA1DA5800A2ED56 /* ZWBGoodsListCell.m in Sources */,
 				9AA230DC1FB458BE00C838D9 /* ZWBStoreHeaderView.m in Sources */,
