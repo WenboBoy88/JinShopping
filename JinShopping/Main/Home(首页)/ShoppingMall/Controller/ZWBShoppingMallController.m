@@ -89,7 +89,7 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 - (void)setupSuspendView {
     self.backTopButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:self.backTopButton];
-    [self.backTopButton addTarget:self action:@selector(ScrollToTop) forControlEvents:UIControlEventTouchUpInside];
+    [self.backTopButton addTarget:self action:@selector(scrollToTop) forControlEvents:UIControlEventTouchUpInside];
     [self.backTopButton setImage:[UIImage imageNamed:@"btn_UpToTop"] forState:UIControlStateNormal];
     self.backTopButton.hidden = YES;
     self.backTopButton.frame = CGRectMake(SCREEN_WIDTH - 50, SCREEN_WIDTH - 60, 40, 40);
@@ -171,6 +171,7 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 }
 
 
+#pragma mark - <UIScrollViewDelegate>
 #pragma mark - 滑动代理
 //开始滑动的时候记录位置
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
@@ -178,23 +179,23 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
     _lastContentOffset = scrollView.contentOffset.y;
     
 }
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
-{
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
     
     if(scrollView.contentOffset.y > _lastContentOffset){
         [self.navigationController setNavigationBarHidden:YES animated:YES];
-        self.collectionView.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
+//        self.collectionView.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
+        self.collectionView.sd_resetLayout.spaceToSuperView(UIEdgeInsetsZero);
         self.view.backgroundColor = [UIColor whiteColor];
     } else {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
-        self.collectionView.frame = CGRectMake(0, ZWB_TopNavH, SCREEN_WIDTH, SCREEN_HEIGHT - ZWB_TopNavH);
+//        self.collectionView.frame = CGRectMake(0, ZWB_TopNavH, SCREEN_WIDTH, SCREEN_HEIGHT - ZWB_TopNavH);
+        self.collectionView.sd_resetLayout.spaceToSuperView(UIEdgeInsetsZero);
         self.view.backgroundColor = COLOR_MAIN_BG;
     }
 }
 
-#pragma mark - <UIScrollViewDelegate>
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //判断回到顶部按钮是否隐藏
     _backTopButton.hidden = (scrollView.contentOffset.y > SCREEN_HEIGHT) ? NO : YES;
     
@@ -206,13 +207,8 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
     
 }
 
-
-#pragma mark - 点击事件
-
-
 #pragma mark - collectionView滚回顶部
-- (void)ScrollToTop
-{
+- (void)scrollToTop {
     [self.collectionView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 

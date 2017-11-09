@@ -16,7 +16,7 @@
     // Initialization code
     
     // 给文本框增加边框线
-    [ZWBSpeedy zwb_chageControlCircularWith:self.desTextField cornerRadius:2 borderWidth:1 borderColor:COLOR_MAIN_BG canMasksToBounds:YES];
+    [ZWBSpeedy zwb_chageControlCircularView:self.desTextField cornerRadius:2 borderWidth:1 borderColor:COLOR_MAIN_BG canMasksToBounds:YES];
 }
 
 

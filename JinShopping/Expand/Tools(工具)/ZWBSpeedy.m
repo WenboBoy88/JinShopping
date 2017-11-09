@@ -10,7 +10,7 @@
 
 @implementation ZWBSpeedy
 
-+ (id)zwb_chageControlCircularWith:(id)anyControl cornerRadius:(CGFloat)radius borderWidth:(CGFloat)width borderColor:(UIColor *)borderColor canMasksToBounds:(BOOL)can {
++ (id)zwb_chageControlCircularView:(id)anyControl cornerRadius:(CGFloat)radius borderWidth:(CGFloat)width borderColor:(UIColor *)borderColor canMasksToBounds:(BOOL)can {
     
     CALayer *icon_layer = [anyControl layer];
     [icon_layer setCornerRadius:radius];

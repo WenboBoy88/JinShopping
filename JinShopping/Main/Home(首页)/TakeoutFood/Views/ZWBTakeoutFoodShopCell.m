@@ -29,7 +29,7 @@
 //    [self bringSubviewToFront:self.goodsImage];
     
     [ZWBSpeedy zwb_setupBezierPathCircularLayerWith:self.addBtn radiusSize:CGSizeMake(12.5, 12.5)];
-    [ZWBSpeedy zwb_chageControlCircularWith:self.subBtn cornerRadius:12.5 borderWidth:1 borderColor:COLOR_MAIN_COLOR canMasksToBounds:YES];
+    [ZWBSpeedy zwb_chageControlCircularView:self.subBtn cornerRadius:12.5 borderWidth:1 borderColor:COLOR_MAIN_COLOR canMasksToBounds:YES];
 }
 
 #pragma mark - Getter Setter Methods

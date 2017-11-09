@@ -58,8 +58,8 @@
 {
     [super layoutSubviews];
     
-    self.titleLabel.dc_x = self.dc_width * 0.3;
-    self.imageView.dc_x = CGRectGetMaxX(self.titleLabel.frame) + DCMargin;
+    self.titleLabel.zwb_top = self.zwb_width * 0.3;
+    self.imageView.zwb_top = CGRectGetMaxX(self.titleLabel.frame) + Padding;
 }
 #pragma mark - Setter Getter Methods
 

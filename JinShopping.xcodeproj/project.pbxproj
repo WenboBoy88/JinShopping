@@ -10,6 +10,9 @@
 		9A07A5491F9F193E0048B1A2 /* DOPDropDownMenu-Enhanced.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A07A5461F9F193E0048B1A2 /* DOPDropDownMenu-Enhanced.xcassets */; };
 		9A07A54A1F9F193E0048B1A2 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A07A5481F9F193E0048B1A2 /* DOPDropDownMenu.m */; };
 		9A0864351F99A5E5000E93A2 /* ZWBMineCustomerItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0864341F99A5E5000E93A2 /* ZWBMineCustomerItemView.m */; };
+		9A0D22FC1FB405D500D42882 /* ZWBDetailShufflingHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D22FB1FB405D400D42882 /* ZWBDetailShufflingHeadView.m */; };
+		9A0D23051FB4079500D42882 /* ZWBDetailHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D23031FB4079400D42882 /* ZWBDetailHeaderCell.m */; };
+		9A0D23061FB4079500D42882 /* ZWBDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0D23041FB4079500D42882 /* ZWBDetailHeaderCell.xib */; };
 		9A153CFC1FB3550000EE2CC9 /* UINavigationController+XWTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A153CBD1FB3550000EE2CC9 /* UINavigationController+XWTransition.m */; };
 		9A153CFD1FB3550000EE2CC9 /* UIView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A153CBF1FB3550000EE2CC9 /* UIView+Snapshot.m */; };
 		9A153CFE1FB3550000EE2CC9 /* UIViewController+XWTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A153CC11FB3550000EE2CC9 /* UIViewController+XWTransition.m */; };
@@ -134,6 +137,14 @@
 		9A8A09C11F974BA3007F5C04 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A09BA1F974BA3007F5C04 /* UIView+SDExtension.m */; };
 		9A994F9A1FA95F8900D866B6 /* ZWBAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F991FA95F8800D866B6 /* ZWBAddressModel.m */; };
 		9AA083941FA22B3700FA0B66 /* ZWBStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA083921FA22B3700FA0B66 /* ZWBStarView.m */; };
+		9AA230CB1FB428E900C838D9 /* ZWBDetailCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA230CA1FB428E900C838D9 /* ZWBDetailCommentCell.m */; };
+		9AA230CF1FB4291800C838D9 /* ZWBDetailStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA230CD1FB4291800C838D9 /* ZWBDetailStoreCell.m */; };
+		9AA230D01FB4291800C838D9 /* ZWBDetailStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA230CE1FB4291800C838D9 /* ZWBDetailStoreCell.xib */; };
+		9AA230D31FB429BB00C838D9 /* ZWBDetailContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA230D21FB429BB00C838D9 /* ZWBDetailContentCell.m */; };
+		9AA230D61FB4488700C838D9 /* ZWBDetailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA230D51FB4488700C838D9 /* ZWBDetailFooterView.m */; };
+		9AA230D91FB454A700C838D9 /* ZWBStoreHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA230D81FB454A700C838D9 /* ZWBStoreHomeController.m */; };
+		9AA230DC1FB458BE00C838D9 /* ZWBStoreHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA230DB1FB458BE00C838D9 /* ZWBStoreHeaderView.m */; };
+		9AA230DE1FB4595200C838D9 /* ZWBStoreHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA230DD1FB4595200C838D9 /* ZWBStoreHeaderView.xib */; };
 		9AA33C061F95B8870016EAC6 /* ZWBTabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AA33C051F95B8870016EAC6 /* ZWBTabBar.plist */; };
 		9AA33C091F95F3820016EAC6 /* ZWBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA33C081F95F3820016EAC6 /* ZWBBaseTableViewController.m */; };
 		9AA33C0C1F95F3960016EAC6 /* ZWBBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA33C0B1F95F3960016EAC6 /* ZWBBaseCollectionViewController.m */; };
@@ -223,6 +234,11 @@
 		9A07A5481F9F193E0048B1A2 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
 		9A0864331F99A5E5000E93A2 /* ZWBMineCustomerItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBMineCustomerItemView.h; sourceTree = "<group>"; };
 		9A0864341F99A5E5000E93A2 /* ZWBMineCustomerItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBMineCustomerItemView.m; sourceTree = "<group>"; };
+		9A0D22FA1FB405D400D42882 /* ZWBDetailShufflingHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBDetailShufflingHeadView.h; sourceTree = "<group>"; };
+		9A0D22FB1FB405D400D42882 /* ZWBDetailShufflingHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBDetailShufflingHeadView.m; sourceTree = "<group>"; };
+		9A0D23021FB4079400D42882 /* ZWBDetailHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBDetailHeaderCell.h; sourceTree = "<group>"; };
+		9A0D23031FB4079400D42882 /* ZWBDetailHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBDetailHeaderCell.m; sourceTree = "<group>"; };
+		9A0D23041FB4079500D42882 /* ZWBDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBDetailHeaderCell.xib; sourceTree = "<group>"; };
 		9A153CBC1FB3550000EE2CC9 /* UINavigationController+XWTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+XWTransition.h"; sourceTree = "<group>"; };
 		9A153CBD1FB3550000EE2CC9 /* UINavigationController+XWTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+XWTransition.m"; sourceTree = "<group>"; };
 		9A153CBE1FB3550000EE2CC9 /* UIView+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snapshot.h"; sourceTree = "<group>"; };
@@ -461,6 +477,20 @@
 		9A994F991FA95F8800D866B6 /* ZWBAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBAddressModel.m; sourceTree = "<group>"; };
 		9AA083921FA22B3700FA0B66 /* ZWBStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBStarView.m; sourceTree = "<group>"; };
 		9AA083931FA22B3700FA0B66 /* ZWBStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBStarView.h; sourceTree = "<group>"; };
+		9AA230C91FB428E900C838D9 /* ZWBDetailCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBDetailCommentCell.h; sourceTree = "<group>"; };
+		9AA230CA1FB428E900C838D9 /* ZWBDetailCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBDetailCommentCell.m; sourceTree = "<group>"; };
+		9AA230CC1FB4291800C838D9 /* ZWBDetailStoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBDetailStoreCell.h; sourceTree = "<group>"; };
+		9AA230CD1FB4291800C838D9 /* ZWBDetailStoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBDetailStoreCell.m; sourceTree = "<group>"; };
+		9AA230CE1FB4291800C838D9 /* ZWBDetailStoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBDetailStoreCell.xib; sourceTree = "<group>"; };
+		9AA230D11FB429BB00C838D9 /* ZWBDetailContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBDetailContentCell.h; sourceTree = "<group>"; };
+		9AA230D21FB429BB00C838D9 /* ZWBDetailContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBDetailContentCell.m; sourceTree = "<group>"; };
+		9AA230D41FB4488700C838D9 /* ZWBDetailFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBDetailFooterView.h; sourceTree = "<group>"; };
+		9AA230D51FB4488700C838D9 /* ZWBDetailFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBDetailFooterView.m; sourceTree = "<group>"; };
+		9AA230D71FB454A700C838D9 /* ZWBStoreHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBStoreHomeController.h; sourceTree = "<group>"; };
+		9AA230D81FB454A700C838D9 /* ZWBStoreHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBStoreHomeController.m; sourceTree = "<group>"; };
+		9AA230DA1FB458BE00C838D9 /* ZWBStoreHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBStoreHeaderView.h; sourceTree = "<group>"; };
+		9AA230DB1FB458BE00C838D9 /* ZWBStoreHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBStoreHeaderView.m; sourceTree = "<group>"; };
+		9AA230DD1FB4595200C838D9 /* ZWBStoreHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBStoreHeaderView.xib; sourceTree = "<group>"; };
 		9AA33C051F95B8870016EAC6 /* ZWBTabBar.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ZWBTabBar.plist; sourceTree = "<group>"; };
 		9AA33C071F95F3820016EAC6 /* ZWBBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBBaseTableViewController.h; sourceTree = "<group>"; };
 		9AA33C081F95F3820016EAC6 /* ZWBBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBBaseTableViewController.m; sourceTree = "<group>"; };
@@ -1855,6 +1885,8 @@
 				9ADE01FD1FAEFB92000416F0 /* ZWBShoppingMallController.m */,
 				9A153D1A1FB3572600EE2CC9 /* ZWBDetailShoppingMallController.h */,
 				9A153D1B1FB3572600EE2CC9 /* ZWBDetailShoppingMallController.m */,
+				9AA230D71FB454A700C838D9 /* ZWBStoreHomeController.h */,
+				9AA230D81FB454A700C838D9 /* ZWBStoreHomeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1887,6 +1919,13 @@
 				9ADE02141FAF0691000416F0 /* ZWBCustionButton.m */,
 				9ADE02051FAF024B000416F0 /* ZWBHoverFlowLayout.h */,
 				9ADE02061FAF024B000416F0 /* ZWBHoverFlowLayout.m */,
+				9A0D22FA1FB405D400D42882 /* ZWBDetailShufflingHeadView.h */,
+				9A0D22FB1FB405D400D42882 /* ZWBDetailShufflingHeadView.m */,
+				9AA230D41FB4488700C838D9 /* ZWBDetailFooterView.h */,
+				9AA230D51FB4488700C838D9 /* ZWBDetailFooterView.m */,
+				9AA230DA1FB458BE00C838D9 /* ZWBStoreHeaderView.h */,
+				9AA230DB1FB458BE00C838D9 /* ZWBStoreHeaderView.m */,
+				9AA230DD1FB4595200C838D9 /* ZWBStoreHeaderView.xib */,
 			);
 			path = CustionView;
 			sourceTree = "<group>";
@@ -1894,6 +1933,16 @@
 		9ADE02071FAF024B000416F0 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				9A0D23021FB4079400D42882 /* ZWBDetailHeaderCell.h */,
+				9A0D23031FB4079400D42882 /* ZWBDetailHeaderCell.m */,
+				9A0D23041FB4079500D42882 /* ZWBDetailHeaderCell.xib */,
+				9AA230C91FB428E900C838D9 /* ZWBDetailCommentCell.h */,
+				9AA230CA1FB428E900C838D9 /* ZWBDetailCommentCell.m */,
+				9AA230CC1FB4291800C838D9 /* ZWBDetailStoreCell.h */,
+				9AA230CD1FB4291800C838D9 /* ZWBDetailStoreCell.m */,
+				9AA230CE1FB4291800C838D9 /* ZWBDetailStoreCell.xib */,
+				9AA230D11FB429BB00C838D9 /* ZWBDetailContentCell.h */,
+				9AA230D21FB429BB00C838D9 /* ZWBDetailContentCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -2023,9 +2072,11 @@
 				9A153D031FB3550000EE2CC9 /* restrictedshine.tiff in Resources */,
 				9A26A1AB1F98A52F0022629E /* ZWBMineHeaderView.xib in Resources */,
 				9A2AFEA61FA1BBC900A2ED56 /* ZWBTakeoutFoodStoreCell.xib in Resources */,
+				9AA230D01FB4291800C838D9 /* ZWBDetailStoreCell.xib in Resources */,
 				9AEC85511FA6F98A0024ADC7 /* ZWBAddressListCell.xib in Resources */,
 				9A153D021FB3550000EE2CC9 /* mask.jpg in Resources */,
 				9A4B83671F98EE8A0049AAD8 /* MineSection.plist in Resources */,
+				9AA230DE1FB4595200C838D9 /* ZWBStoreHeaderView.xib in Resources */,
 				9A74F84B1F9B299D001C364B /* PYSearch.bundle in Resources */,
 				9AEC85591FA716E30024ADC7 /* ZWBTakeoutOrderLocationCell.xib in Resources */,
 				9AA33C061F95B8870016EAC6 /* ZWBTabBar.plist in Resources */,
@@ -2037,6 +2088,7 @@
 				9A74F8611F9B3295001C364B /* ZWBLoginController.xib in Resources */,
 				9A8A09A71F9733FF007F5C04 /* ZWBTimeLimitCell.xib in Resources */,
 				9ADBDF961F8F5D7800BBBEE8 /* Assets.xcassets in Resources */,
+				9A0D23061FB4079500D42882 /* ZWBDetailHeaderCell.xib in Resources */,
 				9A4B83771F98F93E0049AAD8 /* ZWBMineWalletCell.xib in Resources */,
 				9ADBDF941F8F5D7800BBBEE8 /* Main.storyboard in Resources */,
 				9A4CCC951F9C435C00C821E2 /* ZWBInputPasswordController.xib in Resources */,
@@ -2131,6 +2183,7 @@
 				9AFDA8201F97A2480023725B /* ZWBHomeCategoryCell.m in Sources */,
 				9A153D0C1FB3550000EE2CC9 /* XWCoolAnimator.m in Sources */,
 				9AA33C211F95FE8F0016EAC6 /* ZWBMineController.m in Sources */,
+				9AA230CB1FB428E900C838D9 /* ZWBDetailCommentCell.m in Sources */,
 				9A45ED8D1F9052D500B4E108 /* ZWBFactory.m in Sources */,
 				9ADE020B1FAF02BC000416F0 /* ZWBShoppingMallCell.m in Sources */,
 				9AA083941FA22B3700FA0B66 /* ZWBStarView.m in Sources */,
@@ -2138,6 +2191,7 @@
 				9A153D051FB3550000EE2CC9 /* XWCoolAnimator+XWExplode.m in Sources */,
 				9A4CCC941F9C435C00C821E2 /* ZWBInputPasswordController.m in Sources */,
 				9AA33C241F95FECA0016EAC6 /* ZWBShoppingCategoryController.m in Sources */,
+				9A0D23051FB4079500D42882 /* ZWBDetailHeaderCell.m in Sources */,
 				9ADE02181FAF0730000416F0 /* ZWBConsts.m in Sources */,
 				9A153D121FB3550000EE2CC9 /* XWFilterAnimator+XWMask.m in Sources */,
 				9A45EDA21F90541000B4E108 /* ZWBDownoadImageManager.m in Sources */,
@@ -2169,9 +2223,11 @@
 				9A4B83761F98F93E0049AAD8 /* ZWBMineWalletCell.m in Sources */,
 				9A153D0B1FB3550000EE2CC9 /* XWCoolAnimator+XWScanning.m in Sources */,
 				9A153D061FB3550000EE2CC9 /* XWCoolAnimator+XWFold.m in Sources */,
+				9A0D22FC1FB405D500D42882 /* ZWBDetailShufflingHeadView.m in Sources */,
 				9A994F9A1FA95F8900D866B6 /* ZWBAddressModel.m in Sources */,
 				9AEC854B1FA6F9470024ADC7 /* ZWBEditAddressCell.m in Sources */,
 				9A45ED7B1F90526A00B4E108 /* UILabel+ZWBAttributeTextTapAction.m in Sources */,
+				9AA230D91FB454A700C838D9 /* ZWBStoreHomeController.m in Sources */,
 				9AEC85601FA71F890024ADC7 /* ZWBTakeoutOrderInfoCell.m in Sources */,
 				9A6747BF1F9450CF00891A47 /* ZWBBaseViewController.m in Sources */,
 				9A153D081FB3550000EE2CC9 /* XWCoolAnimator+XWMiddlePageFlip.m in Sources */,
@@ -2188,6 +2244,7 @@
 				9A4CCC9C1F9E3F0700C821E2 /* ZWBUploadPictureCell.m in Sources */,
 				9ADE02151FAF0691000416F0 /* ZWBCustionButton.m in Sources */,
 				9A153D181FB3550000EE2CC9 /* XWFilterTransitionView.m in Sources */,
+				9AA230D61FB4488700C838D9 /* ZWBDetailFooterView.m in Sources */,
 				9ADE020F1FAF030E000416F0 /* ZWBShoppingMallModel.m in Sources */,
 				9A26A1A81F989F560022629E /* ZWBMineHeaderView.m in Sources */,
 				9A45ED7A1F90526A00B4E108 /* UILabel+AutoSize.m in Sources */,
@@ -2244,6 +2301,7 @@
 				9A153CFD1FB3550000EE2CC9 /* UIView+Snapshot.m in Sources */,
 				9AB9E20A1F9DB8C20094BC26 /* ZWBListTableCell.m in Sources */,
 				9A45ED811F90526A00B4E108 /* UIAlertView+Block.m in Sources */,
+				9AA230CF1FB4291800C838D9 /* ZWBDetailStoreCell.m in Sources */,
 				9A153D001FB3550000EE2CC9 /* XWTransitionAnimator.m in Sources */,
 				9A45ED831F90526A00B4E108 /* UIView+FrameExpand.m in Sources */,
 				9A45ED821F90526A00B4E108 /* UIView+Expand.m in Sources */,
@@ -2258,11 +2316,13 @@
 				9A8A09C11F974BA3007F5C04 /* UIView+SDExtension.m in Sources */,
 				9AD487161F99EA5700726ED4 /* ZWBMineSectionItemCell.m in Sources */,
 				9A2AFEC01FA1DA5800A2ED56 /* ZWBGoodsListCell.m in Sources */,
+				9AA230DC1FB458BE00C838D9 /* ZWBStoreHeaderView.m in Sources */,
 				9AEC855C1FA71C430024ADC7 /* UILabel+ChangeSpace.m in Sources */,
 				9A153D111FB3550000EE2CC9 /* XWFilterAnimator+XWFlash.m in Sources */,
 				9A6747B41F944F9300891A47 /* ZWBNavigationController.m in Sources */,
 				9AEC85381FA6C7C50024ADC7 /* ZWBStoreMapController.m in Sources */,
 				9A45ED901F9052D500B4E108 /* ZWBProgressView.m in Sources */,
+				9AA230D31FB429BB00C838D9 /* ZWBDetailContentCell.m in Sources */,
 				9AA33C0F1F95FB650016EAC6 /* ZWBShoppingHomeController.m in Sources */,
 				9A153D171FB3550000EE2CC9 /* XWFilterAnimator.m in Sources */,
 				9A8A09BC1F974BA3007F5C04 /* TAAnimatedDotView.m in Sources */,

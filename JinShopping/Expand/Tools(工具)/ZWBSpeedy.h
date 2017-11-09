@@ -20,7 +20,7 @@
  @param can 是否裁剪
  @return 控件
  */
-+ (id)zwb_chageControlCircularWith:(id)anyControl cornerRadius:(CGFloat)radius borderWidth:(CGFloat)width borderColor:(UIColor *)borderColor canMasksToBounds:(BOOL)can;
++ (id)zwb_chageControlCircularView:(id)anyControl cornerRadius:(CGFloat)radius borderWidth:(CGFloat)width borderColor:(UIColor *)borderColor canMasksToBounds:(BOOL)can;
 
 
 /**

@@ -101,7 +101,7 @@ static NSString *ZWBHomeCategoryCellID = @"ZWBHomeCategoryCell";
 // 定位
 - (void)locationItemClick {
     ZWBShoppingMallController *mallVC = [[ZWBShoppingMallController alloc] init];
-    [self.navigationController pushViewController:mall animated:YES];
+    [self.navigationController pushViewController:mallVC animated:YES];
 }
 
 // 快报
