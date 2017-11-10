@@ -78,14 +78,14 @@
 - (void)setupOperationButtonView {
     NSArray *titles = @[@"全部商品",@"评价",@"商家详情"];
     NSArray *normalImages = @[@"candai1", @"candai2", @"candai3"];
-    NSArray *selectImages = @[@"candai1_hover", @"candai2_hover",   @"candai3_hover"];
+    NSArray *selectImages = @[@"candai1_hover", @"candai2_hover", @"candai3_hover"];
 
     self.buttonView = [[UIView alloc] init];
     self.buttonView.backgroundColor = COLOR_WHITE;
     self.buttonView.zwb_left = 0;
     self.buttonView.zwb_top = self.headerView.zwb_bottom;
     self.buttonView.zwb_width = SCREEN_WIDTH;
-    self.buttonView.zwb_height = 60;
+    self.buttonView.zwb_height = 50;
     [self.bgScrollerView addSubview:self.buttonView];
     CGFloat buttonW = self.buttonView.zwb_width / 3;
     CGFloat buttonH = self.buttonView.zwb_height;
@@ -106,13 +106,13 @@
         CGFloat buttonX = i * buttonW;
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
         button.imageView.sd_layout
-        .topSpaceToView(button, 10)
+        .topSpaceToView(button, 8)
         .centerXEqualToView(button)
-        .widthIs(30)
-        .heightIs(22);
+        .widthIs(26)
+        .heightIs(18);
         button.titleLabel.sd_layout
         .topSpaceToView(button.imageView, 5)
-        .bottomSpaceToView(button, 5)
+        .bottomSpaceToView(button, 8)
         .centerXEqualToView(button)
         .widthIs(60);
 

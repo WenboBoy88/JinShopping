@@ -137,6 +137,13 @@
 		9A8A09BF1F974BA3007F5C04 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A09B61F974BA3007F5C04 /* SDCollectionViewCell.m */; };
 		9A8A09C01F974BA3007F5C04 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A09B81F974BA3007F5C04 /* SDCycleScrollView.m */; };
 		9A8A09C11F974BA3007F5C04 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A09BA1F974BA3007F5C04 /* UIView+SDExtension.m */; };
+		9A9066551FB5773900CC243C /* ZWBStoreCustionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9066541FB5773900CC243C /* ZWBStoreCustionView.m */; };
+		9A9066581FB5ABD700CC243C /* ZWBGoodsItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9066571FB5ABD700CC243C /* ZWBGoodsItemModel.m */; };
+		9A90665B1FB5ABF400CC243C /* ZWBGoodsMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A90665A1FB5ABF400CC243C /* ZWBGoodsMainModel.m */; };
+		9A90665E1FB5B7BF00CC243C /* ZWBGoodsSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A90665D1FB5B7BF00CC243C /* ZWBGoodsSortCell.m */; };
+		9A9066611FB5B8C700CC243C /* ZWBGoodsSubItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9066601FB5B8C700CC243C /* ZWBGoodsSubItemModel.m */; };
+		9A9066641FB5BA2200CC243C /* ZWBBrandsSortHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9066631FB5BA2200CC243C /* ZWBBrandsSortHeadView.m */; };
+		9A9066671FB5BDF100CC243C /* ZWBGoodsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9066661FB5BDF100CC243C /* ZWBGoodsItemCell.m */; };
 		9A994F9A1FA95F8900D866B6 /* ZWBAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F991FA95F8800D866B6 /* ZWBAddressModel.m */; };
 		9AA083941FA22B3700FA0B66 /* ZWBStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA083921FA22B3700FA0B66 /* ZWBStarView.m */; };
 		9AA230CB1FB428E900C838D9 /* ZWBDetailCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA230CA1FB428E900C838D9 /* ZWBDetailCommentCell.m */; };
@@ -479,6 +486,20 @@
 		9A8A09B81F974BA3007F5C04 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		9A8A09B91F974BA3007F5C04 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		9A8A09BA1F974BA3007F5C04 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		9A9066531FB5773900CC243C /* ZWBStoreCustionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBStoreCustionView.h; sourceTree = "<group>"; };
+		9A9066541FB5773900CC243C /* ZWBStoreCustionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBStoreCustionView.m; sourceTree = "<group>"; };
+		9A9066561FB5ABD700CC243C /* ZWBGoodsItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBGoodsItemModel.h; sourceTree = "<group>"; };
+		9A9066571FB5ABD700CC243C /* ZWBGoodsItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBGoodsItemModel.m; sourceTree = "<group>"; };
+		9A9066591FB5ABF400CC243C /* ZWBGoodsMainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBGoodsMainModel.h; sourceTree = "<group>"; };
+		9A90665A1FB5ABF400CC243C /* ZWBGoodsMainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBGoodsMainModel.m; sourceTree = "<group>"; };
+		9A90665C1FB5B7BF00CC243C /* ZWBGoodsSortCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBGoodsSortCell.h; sourceTree = "<group>"; };
+		9A90665D1FB5B7BF00CC243C /* ZWBGoodsSortCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBGoodsSortCell.m; sourceTree = "<group>"; };
+		9A90665F1FB5B8C700CC243C /* ZWBGoodsSubItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBGoodsSubItemModel.h; sourceTree = "<group>"; };
+		9A9066601FB5B8C700CC243C /* ZWBGoodsSubItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBGoodsSubItemModel.m; sourceTree = "<group>"; };
+		9A9066621FB5BA2200CC243C /* ZWBBrandsSortHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBBrandsSortHeadView.h; sourceTree = "<group>"; };
+		9A9066631FB5BA2200CC243C /* ZWBBrandsSortHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBBrandsSortHeadView.m; sourceTree = "<group>"; };
+		9A9066651FB5BDF100CC243C /* ZWBGoodsItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBGoodsItemCell.h; sourceTree = "<group>"; };
+		9A9066661FB5BDF100CC243C /* ZWBGoodsItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBGoodsItemCell.m; sourceTree = "<group>"; };
 		9A994F981FA95F8800D866B6 /* ZWBAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBAddressModel.h; sourceTree = "<group>"; };
 		9A994F991FA95F8800D866B6 /* ZWBAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBAddressModel.m; sourceTree = "<group>"; };
 		9AA083921FA22B3700FA0B66 /* ZWBStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBStarView.m; sourceTree = "<group>"; };
@@ -1478,6 +1499,12 @@
 		9AA33C191F95FDE10016EAC6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9A9066561FB5ABD700CC243C /* ZWBGoodsItemModel.h */,
+				9A9066571FB5ABD700CC243C /* ZWBGoodsItemModel.m */,
+				9A9066591FB5ABF400CC243C /* ZWBGoodsMainModel.h */,
+				9A90665A1FB5ABF400CC243C /* ZWBGoodsMainModel.m */,
+				9A90665F1FB5B8C700CC243C /* ZWBGoodsSubItemModel.h */,
+				9A9066601FB5B8C700CC243C /* ZWBGoodsSubItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1492,6 +1519,12 @@
 		9AA33C1B1F95FDE10016EAC6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9A9066621FB5BA2200CC243C /* ZWBBrandsSortHeadView.h */,
+				9A9066631FB5BA2200CC243C /* ZWBBrandsSortHeadView.m */,
+				9A90665C1FB5B7BF00CC243C /* ZWBGoodsSortCell.h */,
+				9A90665D1FB5B7BF00CC243C /* ZWBGoodsSortCell.m */,
+				9A9066651FB5BDF100CC243C /* ZWBGoodsItemCell.h */,
+				9A9066661FB5BDF100CC243C /* ZWBGoodsItemCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1936,6 +1969,8 @@
 				9AA230DA1FB458BE00C838D9 /* ZWBStoreHeaderView.h */,
 				9AA230DB1FB458BE00C838D9 /* ZWBStoreHeaderView.m */,
 				9AA230DD1FB4595200C838D9 /* ZWBStoreHeaderView.xib */,
+				9A9066531FB5773900CC243C /* ZWBStoreCustionView.h */,
+				9A9066541FB5773900CC243C /* ZWBStoreCustionView.m */,
 			);
 			path = CustionView;
 			sourceTree = "<group>";
@@ -2209,6 +2244,7 @@
 				9A74F8601F9B3295001C364B /* ZWBLoginController.m in Sources */,
 				9A153D0F1FB3550000EE2CC9 /* XWFilterAnimator+XWBoxBlur.m in Sources */,
 				9AEC85371FA6C7C50024ADC7 /* ZWBSubmitOrderController.m in Sources */,
+				9A90665E1FB5B7BF00CC243C /* ZWBGoodsSortCell.m in Sources */,
 				9A153D151FB3550000EE2CC9 /* XWFilterAnimator+XWRipple.m in Sources */,
 				9A45ED7E1F90526A00B4E108 /* UIImage+Expand.m in Sources */,
 				9A45ED731F90526A00B4E108 /* NSString+Addition.m in Sources */,
@@ -2234,13 +2270,16 @@
 				9A4B83761F98F93E0049AAD8 /* ZWBMineWalletCell.m in Sources */,
 				9A153D0B1FB3550000EE2CC9 /* XWCoolAnimator+XWScanning.m in Sources */,
 				9A153D061FB3550000EE2CC9 /* XWCoolAnimator+XWFold.m in Sources */,
+				9A9066671FB5BDF100CC243C /* ZWBGoodsItemCell.m in Sources */,
 				9A0D22FC1FB405D500D42882 /* ZWBDetailShufflingHeadView.m in Sources */,
 				9A994F9A1FA95F8900D866B6 /* ZWBAddressModel.m in Sources */,
 				9AEC854B1FA6F9470024ADC7 /* ZWBEditAddressCell.m in Sources */,
 				9A45ED7B1F90526A00B4E108 /* UILabel+ZWBAttributeTextTapAction.m in Sources */,
 				9AA230D91FB454A700C838D9 /* ZWBStoreHomeController.m in Sources */,
 				9AEC85601FA71F890024ADC7 /* ZWBTakeoutOrderInfoCell.m in Sources */,
+				9A9066581FB5ABD700CC243C /* ZWBGoodsItemModel.m in Sources */,
 				9A6747BF1F9450CF00891A47 /* ZWBBaseViewController.m in Sources */,
+				9A90665B1FB5ABF400CC243C /* ZWBGoodsMainModel.m in Sources */,
 				9A153D081FB3550000EE2CC9 /* XWCoolAnimator+XWMiddlePageFlip.m in Sources */,
 				9A45ED801F90526A00B4E108 /* NSFileManager+Path.m in Sources */,
 				9AD487131F99DA3B00726ED4 /* ZWBMineSectionItemModel.m in Sources */,
@@ -2267,6 +2306,7 @@
 				9A26A1B11F98B7060022629E /* UIImageView+CornerRadius.m in Sources */,
 				9A8A09BB1F974BA3007F5C04 /* TAAbstractDotView.m in Sources */,
 				9A45ED761F90526A00B4E108 /* NSString+ZWBMD5Hash.m in Sources */,
+				9A9066551FB5773900CC243C /* ZWBStoreCustionView.m in Sources */,
 				9AEC85341FA6C7C50024ADC7 /* ZWBTakeoutEvalController.m in Sources */,
 				9A45ED8E1F9052D500B4E108 /* ZWBUtil.m in Sources */,
 				9A4CCC8F1F9C434000C821E2 /* ZWBForgetPasswordController.m in Sources */,
@@ -2295,6 +2335,7 @@
 				9A153D071FB3550000EE2CC9 /* XWCoolAnimator+XWLines.m in Sources */,
 				9A6747B81F944FBD00891A47 /* ZWBTabBar.m in Sources */,
 				9A74F84D1F9B299D001C364B /* PYSearchSuggestionViewController.m in Sources */,
+				9A9066611FB5B8C700CC243C /* ZWBGoodsSubItemModel.m in Sources */,
 				9A45ED9F1F90541000B4E108 /* ZWBRequestManager.m in Sources */,
 				9A153D0D1FB3550000EE2CC9 /* XWDrawerAnimator.m in Sources */,
 				9A4B83721F98F1150049AAD8 /* ZWBBaseRequest.m in Sources */,
@@ -2338,6 +2379,7 @@
 				9AA33C0F1F95FB650016EAC6 /* ZWBShoppingHomeController.m in Sources */,
 				9A153D171FB3550000EE2CC9 /* XWFilterAnimator.m in Sources */,
 				9A8A09BC1F974BA3007F5C04 /* TAAnimatedDotView.m in Sources */,
+				9A9066641FB5BA2200CC243C /* ZWBBrandsSortHeadView.m in Sources */,
 				9A8A09BD1F974BA3007F5C04 /* TADotView.m in Sources */,
 				9AEC85471FA6C8ED0024ADC7 /* ZWBTakeoutEvalCell.m in Sources */,
 				9AC8563D1FA75CD70022511B /* ZWBTakeoutOrderFooterView.m in Sources */,

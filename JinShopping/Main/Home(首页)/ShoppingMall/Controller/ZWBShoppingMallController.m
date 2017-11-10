@@ -71,7 +71,9 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = COLOR_MAIN_BG;
-
+    
+    // 设置悬浮按钮
+    [self setupSuspendView];
 }
 
 #pragma mark - Button Click
@@ -93,7 +95,7 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
     [self.backTopButton setImage:[UIImage imageNamed:@"btn_UpToTop"] forState:UIControlStateNormal];
     self.backTopButton.hidden = YES;
     self.backTopButton.frame = CGRectMake(SCREEN_WIDTH - 50, SCREEN_WIDTH - 60, 40, 40);
-    }
+}
 
 #pragma mark - <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -174,13 +176,13 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 #pragma mark - <UIScrollViewDelegate>
 #pragma mark - 滑动代理
 //开始滑动的时候记录位置
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     
     _lastContentOffset = scrollView.contentOffset.y;
     
 }
 
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
     
     if(scrollView.contentOffset.y > _lastContentOffset){
         [self.navigationController setNavigationBarHidden:YES animated:YES];
@@ -234,8 +236,7 @@ static NSString *ZWBShoppingMallCellID = @"ZWBShoppingMallCell";
 
 
 #pragma mark - LazyLoad
-- (UICollectionView *)collectionView
-{
+- (UICollectionView *)collectionView {
     if (!_collectionView) {
         ZWBHoverFlowLayout *layout = [ZWBHoverFlowLayout new];
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];

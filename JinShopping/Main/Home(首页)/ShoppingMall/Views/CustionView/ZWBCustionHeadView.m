@@ -6,7 +6,6 @@
 //  Copyright © 2017年 RocketsChen. All rights reserved.
 //
 
-#define AuxiliaryNum 100
 
 #import "ZWBCustionHeadView.h"
 
@@ -22,6 +21,7 @@
 // Categories
 
 // Others
+#define AuxiliaryNum 100
 
 @interface ZWBCustionHeadView ()
 
@@ -45,8 +45,7 @@
     return self;
 }
 
-- (void)setUpUI
-{
+- (void)setUpUI {
     self.backgroundColor = [UIColor whiteColor];
     NSArray *titles = @[@"水果餐饮",@"家用电器",@"数码产品",@"汽车配件"];
     NSArray *noImage = @[@"icon_Arrow2",@"",@"",@"icon_shaixuan"];
@@ -56,6 +55,7 @@
     for (NSInteger i = 0; i < titles.count; i++) {
         ZWBCustionButton *button = [ZWBCustionButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:titles[i] forState:UIControlStateNormal];
+        button.titleLabel.font = PFR_FONT(15.0f);
         [self addSubview:button];
         [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:noImage[i]] forState:UIControlStateNormal];
