@@ -23,11 +23,11 @@
                             target:(id)target
                                sel:(SEL)sel
                                tag:(NSInteger)tag
-                             image:(NSString *)name
+                             image:(NSString *)imageName
                              title:(NSString *)title;
 //创建UIImageView
 + (UIImageView *)creatImageViewWithFrame:(CGRect)frame
-                               imageName:(NSString *)name;
+                               imageName:(NSString *)imageName;
 //创建UITextField
 + (UITextField *)creatTextFieldWithFrame:(CGRect)frame
                              placeHolder:(NSString *)string

@@ -11,6 +11,12 @@
 @interface UIBarButtonItem (Addition)
 
 
++ (UIBarButtonItem *)itemWithTitle:(NSString *)title
+                             frame:(CGRect)frame
+                            target:(id)target
+                            action:(SEL)action;
+
+
 + (UIBarButtonItem *)itemWithImage:(UIImage *)image
                             target:(id)target
                             action:(SEL)action;

@@ -10,6 +10,13 @@
 
 @implementation UIBarButtonItem (Addition)
 
++ (UIBarButtonItem *)itemWithTitle:(NSString *)title
+                             frame:(CGRect)frame
+                            target:(id)target
+                            action:(SEL)action {
+    return [self itemWithTitle:title frame:frame layercornerRadius:0 layerBorderWitdth:0 layerBorderColor:nil target:target action:action];
+}
+
 + (UIBarButtonItem *)itemWithImage:(UIImage *)image
                             target:(id)target
                             action:(SEL)action {

@@ -20,13 +20,14 @@
     return label;
 }
 
-+ (UIButton *)creatButtonWithFrame:(CGRect)frame bgColor:(UIColor *)bgColor textColor:(UIColor *)color target:(id)target sel:(SEL)sel tag:(NSInteger)tag image:(NSString *)name title:(NSString *)title{
++ (UIButton *)creatButtonWithFrame:(CGRect)frame bgColor:(UIColor *)bgColor textColor:(UIColor *)color target:(id)target sel:(SEL)sel tag:(NSInteger)tag image:(NSString *)imageName title:(NSString *)title{
     UIButton *button = nil;
-    if (name) {
+    if (imageName) {
         //创建图片按钮
         //创建背景图片 按钮
         button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+//        [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        [button setImage:IMAGE(imageName) forState:UIControlStateNormal];
         if (title) {//图片标题按钮
             [button setTitle:title forState:UIControlStateNormal];
             [button setTitleColor:color forState:UIControlStateNormal];
@@ -45,9 +46,9 @@
     return button;
     
 }
-+ (UIImageView *)creatImageViewWithFrame:(CGRect)frame imageName:(NSString *)name{
++ (UIImageView *)creatImageViewWithFrame:(CGRect)frame imageName:(NSString *)imageName{
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-    imageView.image  = [UIImage imageNamed:name];
+    imageView.image  = [UIImage imageNamed:imageName];
     return imageView;
 }
 

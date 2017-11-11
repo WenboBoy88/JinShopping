@@ -11,7 +11,9 @@
 @interface ZWBBrandsSortHeadView ()
 
 /* 头部标题Label */
-@property (strong , nonatomic)UILabel *headLabel;
+@property (nonatomic, strong) UILabel *headLabel;
+
+@property (nonatomic, strong) UIButton *moreBtn;
 
 @end
 

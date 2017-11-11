@@ -10,5 +10,10 @@
 
 @interface ZWBGoodsItemModel : ZWBBaseModel
 
+/** 文标题  */
+@property (nonatomic, copy ,readonly) NSString *title;
+/** plist  */
+@property (nonatomic, copy ,readonly) NSString *fileName;
+
 
 @end

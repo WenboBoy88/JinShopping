@@ -1,45 +1,42 @@
 //
-//  ZWBSearchViewController.m
+//  ZWBCouponController.m
 //  JinShopping
 //
-//  Created by 张文博 on 2017/10/21.
+//  Created by 张文博 on 2017/11/11.
 //  Copyright © 2017年 张文博. All rights reserved.
 //
 
-#import "ZWBSearchViewController.h"
+#import "ZWBCouponController.h"
 
-// Views
-
-// Model
-
-// Other
-
-@interface ZWBSearchViewController ()
-
-
+@interface ZWBCouponController ()
 
 @end
 
-@implementation ZWBSearchViewController
+@implementation ZWBCouponController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // 初始化导航栏
     [self setupNav];
-    // 初始化UI界面
-    [self setupUI];
 }
 
 #pragma mark - 初始化导航栏
 - (void)setupNav {
+    self.navigationItem.title = @"优惠券";
     
 }
 
-#pragma mark - 初始化UI界面
+#pragma mark - 初始化界面
 - (void)setupUI {
     
 }
+
+#pragma mark - LoadData
+- (void)loadData {
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

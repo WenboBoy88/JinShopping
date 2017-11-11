@@ -122,6 +122,13 @@
 		9A74F8581F9B2E7A001C364B /* ZWBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A74F8571F9B2E7A001C364B /* ZWBSearchViewController.m */; };
 		9A74F8601F9B3295001C364B /* ZWBLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A74F85E1F9B3295001C364B /* ZWBLoginController.m */; };
 		9A74F8611F9B3295001C364B /* ZWBLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A74F85F1F9B3295001C364B /* ZWBLoginController.xib */; };
+		9A7919941FB69B75009EFE2C /* ZWBSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7919931FB69B75009EFE2C /* ZWBSearchBarView.m */; };
+		9A79199C1FB6E485009EFE2C /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7919971FB6E485009EFE2C /* YBPopupMenu.m */; };
+		9A79199D1FB6E485009EFE2C /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7919991FB6E485009EFE2C /* YBPopupMenuPath.m */; };
+		9A79199E1FB6E485009EFE2C /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A79199B1FB6E485009EFE2C /* YBRectConst.m */; };
+		9A7919A61FB6F173009EFE2C /* ZWBCouponController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7919A51FB6F173009EFE2C /* ZWBCouponController.m */; };
+		9A7919AD1FB6F80D009EFE2C /* ZWBCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7919AB1FB6F80D009EFE2C /* ZWBCouponCell.m */; };
+		9A7919AE1FB6F80D009EFE2C /* ZWBCouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7919AC1FB6F80D009EFE2C /* ZWBCouponCell.xib */; };
 		9A838BEA1FA2C86F00F1822E /* ZWBTakeoutFoodShopCarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A838BE91FA2C86F00F1822E /* ZWBTakeoutFoodShopCarViewModel.m */; };
 		9A8A097A1F96EADD007F5C04 /* UIBarButtonItem+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A09791F96EADD007F5C04 /* UIBarButtonItem+Addition.m */; };
 		9A8A097D1F9701A5007F5C04 /* ZWBHomeNavSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A097C1F9701A5007F5C04 /* ZWBHomeNavSearchBarView.m */; };
@@ -457,6 +464,19 @@
 		9A74F85D1F9B3295001C364B /* ZWBLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBLoginController.h; sourceTree = "<group>"; };
 		9A74F85E1F9B3295001C364B /* ZWBLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBLoginController.m; sourceTree = "<group>"; };
 		9A74F85F1F9B3295001C364B /* ZWBLoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBLoginController.xib; sourceTree = "<group>"; };
+		9A7919921FB69B75009EFE2C /* ZWBSearchBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBSearchBarView.h; sourceTree = "<group>"; };
+		9A7919931FB69B75009EFE2C /* ZWBSearchBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBSearchBarView.m; sourceTree = "<group>"; };
+		9A7919961FB6E485009EFE2C /* YBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenu.h; sourceTree = "<group>"; };
+		9A7919971FB6E485009EFE2C /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
+		9A7919981FB6E485009EFE2C /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
+		9A7919991FB6E485009EFE2C /* YBPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenuPath.m; sourceTree = "<group>"; };
+		9A79199A1FB6E485009EFE2C /* YBRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRectConst.h; sourceTree = "<group>"; };
+		9A79199B1FB6E485009EFE2C /* YBRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBRectConst.m; sourceTree = "<group>"; };
+		9A7919A41FB6F173009EFE2C /* ZWBCouponController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBCouponController.h; sourceTree = "<group>"; };
+		9A7919A51FB6F173009EFE2C /* ZWBCouponController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBCouponController.m; sourceTree = "<group>"; };
+		9A7919AA1FB6F80D009EFE2C /* ZWBCouponCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBCouponCell.h; sourceTree = "<group>"; };
+		9A7919AB1FB6F80D009EFE2C /* ZWBCouponCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBCouponCell.m; sourceTree = "<group>"; };
+		9A7919AC1FB6F80D009EFE2C /* ZWBCouponCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBCouponCell.xib; sourceTree = "<group>"; };
 		9A838BE81FA2C86F00F1822E /* ZWBTakeoutFoodShopCarViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBTakeoutFoodShopCarViewModel.h; sourceTree = "<group>"; };
 		9A838BE91FA2C86F00F1822E /* ZWBTakeoutFoodShopCarViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBTakeoutFoodShopCarViewModel.m; sourceTree = "<group>"; };
 		9A8A09781F96EADD007F5C04 /* UIBarButtonItem+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Addition.h"; sourceTree = "<group>"; };
@@ -1156,6 +1176,63 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		9A7919951FB6E485009EFE2C /* YBPopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9A7919961FB6E485009EFE2C /* YBPopupMenu.h */,
+				9A7919971FB6E485009EFE2C /* YBPopupMenu.m */,
+				9A7919981FB6E485009EFE2C /* YBPopupMenuPath.h */,
+				9A7919991FB6E485009EFE2C /* YBPopupMenuPath.m */,
+				9A79199A1FB6E485009EFE2C /* YBRectConst.h */,
+				9A79199B1FB6E485009EFE2C /* YBRectConst.m */,
+			);
+			path = YBPopupMenu;
+			sourceTree = "<group>";
+		};
+		9A79199F1FB6EED5009EFE2C /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				9A7919A01FB6EED5009EFE2C /* Controller */,
+				9A7919A11FB6EED5009EFE2C /* Model */,
+				9A7919A21FB6EED5009EFE2C /* Service */,
+				9A7919A31FB6EED5009EFE2C /* Views */,
+			);
+			path = Coupon;
+			sourceTree = "<group>";
+		};
+		9A7919A01FB6EED5009EFE2C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A7919A41FB6F173009EFE2C /* ZWBCouponController.h */,
+				9A7919A51FB6F173009EFE2C /* ZWBCouponController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A7919A11FB6EED5009EFE2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A7919A21FB6EED5009EFE2C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9A7919A31FB6EED5009EFE2C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A7919AA1FB6F80D009EFE2C /* ZWBCouponCell.h */,
+				9A7919AB1FB6F80D009EFE2C /* ZWBCouponCell.m */,
+				9A7919AC1FB6F80D009EFE2C /* ZWBCouponCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9A838BE71FA2C86F00F1822E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1281,6 +1358,7 @@
 				9A74F8511F9B2AB0001C364B /* Search */,
 				9AB2ADA81F9EE4F1007C3108 /* TakeoutFood */,
 				9ADE01F91FAEF77F000416F0 /* ShoppingMall */,
+				9A79199F1FB6EED5009EFE2C /* Coupon */,
 			);
 			path = "Home(首页)";
 			sourceTree = "<group>";
@@ -1519,6 +1597,8 @@
 		9AA33C1B1F95FDE10016EAC6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9A7919921FB69B75009EFE2C /* ZWBSearchBarView.h */,
+				9A7919931FB69B75009EFE2C /* ZWBSearchBarView.m */,
 				9A9066621FB5BA2200CC243C /* ZWBBrandsSortHeadView.h */,
 				9A9066631FB5BA2200CC243C /* ZWBBrandsSortHeadView.m */,
 				9A90665C1FB5B7BF00CC243C /* ZWBGoodsSortCell.h */,
@@ -1850,6 +1930,7 @@
 		9ADBDF831F8F5D7700BBBEE8 /* Vendors(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				9A7919951FB6E485009EFE2C /* YBPopupMenu */,
 				9A74F83B1F9B299D001C364B /* PYSearch */,
 				9A8A09AB1F974BA3007F5C04 /* SDCycleScrollView */,
 				9A07A5451F9F193E0048B1A2 /* DOPDropDownMenu */,
@@ -2132,6 +2213,7 @@
 				9AFDA8211F97A2480023725B /* ZWBHomeCategoryCell.xib in Resources */,
 				9A74F8611F9B3295001C364B /* ZWBLoginController.xib in Resources */,
 				9A8A09A71F9733FF007F5C04 /* ZWBTimeLimitCell.xib in Resources */,
+				9A7919AE1FB6F80D009EFE2C /* ZWBCouponCell.xib in Resources */,
 				9ADBDF961F8F5D7800BBBEE8 /* Assets.xcassets in Resources */,
 				9A0D23061FB4079500D42882 /* ZWBDetailHeaderCell.xib in Resources */,
 				9A4B83771F98F93E0049AAD8 /* ZWBMineWalletCell.xib in Resources */,
@@ -2228,6 +2310,7 @@
 				9AFDA8201F97A2480023725B /* ZWBHomeCategoryCell.m in Sources */,
 				9A153D0C1FB3550000EE2CC9 /* XWCoolAnimator.m in Sources */,
 				9AA33C211F95FE8F0016EAC6 /* ZWBMineController.m in Sources */,
+				9A79199E1FB6E485009EFE2C /* YBRectConst.m in Sources */,
 				9AA230CB1FB428E900C838D9 /* ZWBDetailCommentCell.m in Sources */,
 				9A45ED8D1F9052D500B4E108 /* ZWBFactory.m in Sources */,
 				9ADE020B1FAF02BC000416F0 /* ZWBShoppingMallCell.m in Sources */,
@@ -2291,6 +2374,7 @@
 				9A8A099A1F9724E6007F5C04 /* ZWBShowItemView.m in Sources */,
 				9A45ED721F90526A00B4E108 /* UINavigationBar+Addition.m in Sources */,
 				9A4B83621F98E5C60049AAD8 /* ZWBMineSectionHeaderView.m in Sources */,
+				9A79199D1FB6E485009EFE2C /* YBPopupMenuPath.m in Sources */,
 				9A4CCC9C1F9E3F0700C821E2 /* ZWBUploadPictureCell.m in Sources */,
 				9ADE02151FAF0691000416F0 /* ZWBCustionButton.m in Sources */,
 				9A153D181FB3550000EE2CC9 /* XWFilterTransitionView.m in Sources */,
@@ -2331,6 +2415,7 @@
 				9A45ED791F90526A00B4E108 /* UIImageView+Expand.m in Sources */,
 				9AC8563A1FA753CF0022511B /* ZWBTakeoutPayFooterView.m in Sources */,
 				9AA33C0C1F95F3960016EAC6 /* ZWBBaseCollectionViewController.m in Sources */,
+				9A7919A61FB6F173009EFE2C /* ZWBCouponController.m in Sources */,
 				9A8A09841F9712C9007F5C04 /* ZWBScrollHeaderView.m in Sources */,
 				9A153D071FB3550000EE2CC9 /* XWCoolAnimator+XWLines.m in Sources */,
 				9A6747B81F944FBD00891A47 /* ZWBTabBar.m in Sources */,
@@ -2358,6 +2443,7 @@
 				9A45ED831F90526A00B4E108 /* UIView+FrameExpand.m in Sources */,
 				9A45ED821F90526A00B4E108 /* UIView+Expand.m in Sources */,
 				9A153D141FB3550000EE2CC9 /* XWFilterAnimator+XWPageCurl.m in Sources */,
+				9A79199C1FB6E485009EFE2C /* YBPopupMenu.m in Sources */,
 				9AEC85541FA712C80024ADC7 /* ZWBTakeoutSpecialCell.m in Sources */,
 				9A8A09AA1F97355A007F5C04 /* ZWBTimeLimitView.m in Sources */,
 				9A2AFEB11FA1D2A900A2ED56 /* ZWBBadgeView.m in Sources */,
@@ -2378,10 +2464,12 @@
 				9AA230D31FB429BB00C838D9 /* ZWBDetailContentCell.m in Sources */,
 				9AA33C0F1F95FB650016EAC6 /* ZWBShoppingHomeController.m in Sources */,
 				9A153D171FB3550000EE2CC9 /* XWFilterAnimator.m in Sources */,
+				9A7919AD1FB6F80D009EFE2C /* ZWBCouponCell.m in Sources */,
 				9A8A09BC1F974BA3007F5C04 /* TAAnimatedDotView.m in Sources */,
 				9A9066641FB5BA2200CC243C /* ZWBBrandsSortHeadView.m in Sources */,
 				9A8A09BD1F974BA3007F5C04 /* TADotView.m in Sources */,
 				9AEC85471FA6C8ED0024ADC7 /* ZWBTakeoutEvalCell.m in Sources */,
+				9A7919941FB69B75009EFE2C /* ZWBSearchBarView.m in Sources */,
 				9AC8563D1FA75CD70022511B /* ZWBTakeoutOrderFooterView.m in Sources */,
 				9AEC85581FA716E30024ADC7 /* ZWBTakeoutOrderLocationCell.m in Sources */,
 				9AEC853A1FA6C7C50024ADC7 /* ZWBEditAdressController.m in Sources */,

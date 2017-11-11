@@ -11,6 +11,7 @@
 // Models
 
 // Views
+#import "ZWBSearchBarView.h"
 #import "ZWBBrandsSortHeadView.h"
 #import "ZWBGoodsSortCell.h"
 #import "ZWBGoodsItemCell.h"
@@ -51,13 +52,16 @@ static NSString *ZWBGoodsItemCellID = @"ZWBGoodsItemCell";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (self.navigationController.navigationBar.barTintColor == RGBA(231, 23, 37, 1.0)) return;
-    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
+//    if (self.navigationController.navigationBar.barTintColor == RGBA(231, 23, 37, 1.0)) return;
+//    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
 }
 
 #pragma mark - 初始化导航栏
 - (void)setupNav {
+    ZWBSearchBarView *searchBarView = [[ZWBSearchBarView alloc] initWithFrame:CGRectMake(0, 0, 300, 36) searchViewType:ShowButton];
+    self.navigationItem.titleView = searchBarView;
     
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"搜索" frame:CGRectMake(0, 0 , 40, 40) target:self action:@selector(searchClick:)];
 }
 
 #pragma mark - 初始化界面
@@ -73,6 +77,10 @@ static NSString *ZWBGoodsItemCellID = @"ZWBGoodsItemCell";
     
 }
 
+#pragma mark - 搜索
+- (void)searchClick:(UIButton *)button {
+    
+}
 
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -80,10 +88,9 @@ static NSString *ZWBGoodsItemCellID = @"ZWBGoodsItemCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    DCClassCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:DCClassCategoryCellID forIndexPath:indexPath];
-//    cell.titleItem = _titleItem[indexPath.row];
-//    return cell;
-    return nil;
+    ZWBGoodsItemCell *cell = [tableView dequeueReusableCellWithIdentifier:ZWBGoodsItemCellID forIndexPath:indexPath];
+    cell.itemModel = self.titleItemArr[indexPath.row];
+    return cell;
 }
 
 #pragma mark - <UITableViewDelegate>
@@ -92,8 +99,8 @@ static NSString *ZWBGoodsItemCellID = @"ZWBGoodsItemCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    self.mainItemArr = [DCClassMianItem mj_objectArrayWithFilename:_titleItem[indexPath.row].fileName];
-//    [self.collectionView reloadData];
+
+    [self.collectionView reloadData];
 }
 
 #pragma mark - <UITableViewDataSource>
@@ -131,9 +138,9 @@ static NSString *ZWBGoodsItemCellID = @"ZWBGoodsItemCell";
     
     UICollectionReusableView *reusableview = nil;
     if (kind == UICollectionElementKindSectionHeader){
-//        DCBrandsSortHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:DCBrandsSortHeadViewID forIndexPath:indexPath];
-//        headerView.headTitle = _mainItem[indexPath.section];
-//        reusableview = headerView;
+        ZWBBrandsSortHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ZWBBrandsSortHeadViewID forIndexPath:indexPath];
+        headerView.mainModel = self.mainItemArr[indexPath.section];
+        reusableview = headerView;
     }
     return reusableview;
 }
@@ -208,10 +215,11 @@ static NSString *ZWBGoodsItemCellID = @"ZWBGoodsItemCell";
         _collectionView.showsHorizontalScrollIndicator = NO;
         [self.view addSubview:_collectionView];
 //        _collectionView.frame = CGRectMake(TableView_W, DCTopNavH, ScreenW - tableViewH, ScreenH - DCTopNavH - DCBottomTabH);
-        //注册Cell
-        [_collectionView registerClass:[ZWBGoodsSortCell class] forCellWithReuseIdentifier:ZWBGoodsSortCellID];
+        
         //注册Header
         [_collectionView registerClass:[ZWBBrandsSortHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ZWBBrandsSortHeadViewID];
+        //注册Cell
+        [_collectionView registerClass:[ZWBGoodsSortCell class] forCellWithReuseIdentifier:ZWBGoodsSortCellID];
         
         _collectionView.sd_layout
         .topEqualToView(self.view)
