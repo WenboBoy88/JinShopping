@@ -62,7 +62,13 @@
 - (void)setImageURLArr:(NSArray *)imageURLArr {
     _imageURLArr = imageURLArr;
     
+    self.cycleScrollView.imageURLStringsGroup = imageURLArr;
+}
+
+- (void)setPlaceHolderImageName:(NSString *)placeHolderImageName {
+    _placeHolderImageName = placeHolderImageName;
     
+    self.cycleScrollView.placeholderImage = IMAGE(placeHolderImageName);
 }
 
 @end

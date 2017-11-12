@@ -27,6 +27,9 @@
 // Expand
 #import "MBProgressHUD+Expand.h"
 
+// Vender
+#import "WMPageController.h"
+
 // Other
 #import "ZWBCommonConstant.h"
 #import "ZWBFileCacheManager.h"

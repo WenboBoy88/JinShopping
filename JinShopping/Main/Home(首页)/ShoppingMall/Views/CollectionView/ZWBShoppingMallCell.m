@@ -24,13 +24,15 @@
 @interface ZWBShoppingMallCell ()
 
 /* 商品图片 */
-@property (strong , nonatomic) UIImageView *gridImageView;
+@property (nonatomic, strong) UIImageView *gridImageView;
 /* 商品标题 */
-@property (strong , nonatomic) UILabel *gridLabel;
+@property (nonatomic, strong) UILabel *gridLabel;
 /* 价格 */
-@property (strong , nonatomic) UILabel *priceLabel;
+@property (nonatomic, strong) UILabel *priceLabel;
 /* 销售数量 */
-@property (strong , nonatomic) UILabel *saleNumLabel;
+@property (nonatomic, strong) UILabel *saleNumLabel;
+/* 马上兑换 */
+@property (nonatomic, strong) UIButton *convertBtn;
 
 @end
 
@@ -41,15 +43,24 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        
-        [self setUpUI];
+        // 初始化设置
+        [self setupBase];
+        // 初始化界面
+        [self setupUI];
+        // 设置布局
+        [self setupAutoLayout];
     }
     return self;
 }
 
+#pragma mark - 初始化设置
+- (void)setupBase {
+    // 默认隐藏
+    self.isHiddenConvertBtn = YES;
+}
+
 #pragma mark - UI
-- (void)setUpUI
-{
+- (void)setupUI {
     self.backgroundColor = [UIColor whiteColor];
     self.gridImageView = [[UIImageView alloc] init];
     self.gridImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -69,12 +80,26 @@
     NSInteger pNum = arc4random() % 10000;
     self.saleNumLabel.text = [NSString stringWithFormat:@"已售%zd单",pNum];
     self.saleNumLabel.font = PFR_FONT(14.0f);
+    self.saleNumLabel.hidden = !self.isHiddenConvertBtn;
     self.saleNumLabel.textColor = [UIColor darkGrayColor];
     [self addSubview:self.saleNumLabel];
+    
+    self.convertBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.convertBtn.backgroundColor = COLOR_MAIN_RED;
+    self.convertBtn.hidden = self.isHiddenConvertBtn;
+    [self.convertBtn setTitle:@"马上兑换" forState:UIControlStateNormal];
+    [self.convertBtn setTitleColor:COLOR_WHITE forState:UIControlStateNormal];
+    self.convertBtn.titleLabel.font = PFR_FONT(14.0f);
+    [self.convertBtn addTarget:self action:@selector(convertClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.convertBtn];
 }
 
-- (void)layoutSubviews
-{
+#pragma mark - AutoLayout
+- (void)setupAutoLayout {
+    
+}
+
+- (void)layoutSubviews {
     [super layoutSubviews];
     
 //    [_gridImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,10 +134,24 @@
 //        [make.top.mas_equalTo(_priceLabel.mas_bottom)setOffset:2];
 //    }];
 
-    
+}
+
+#pragma mark - Button Click
+- (void)convertClick:(UIButton *)button {
+    if (self.convertClickBlock) {
+        self.convertClickBlock();
+    }
 }
 
 #pragma mark - Setter Getter Methods
+// 俩个按钮只能同时显示一个
+- (void)setIsHiddenConvertBtn:(BOOL)isHiddenConvertBtn {
+    _isHiddenConvertBtn = isHiddenConvertBtn;
+    
+    self.saleNumLabel.hidden = !isHiddenConvertBtn;
+    self.convertBtn.hidden   = isHiddenConvertBtn;
+}
+
 - (void)setMallModel:(ZWBShoppingMallModel *)mallModel {
     _mallModel = mallModel;
     [_gridImageView sd_setImageWithURL:[NSURL URLWithString:mallModel.image_url]];
@@ -121,6 +160,7 @@
     //首行缩进
     [ZWBSpeedy zwb_setupLabel:_gridLabel content:mallModel.main_title indentationFortheFirstLineWith:_gridLabel.font.pointSize * 3.5];
 }
+
 
 
 @end

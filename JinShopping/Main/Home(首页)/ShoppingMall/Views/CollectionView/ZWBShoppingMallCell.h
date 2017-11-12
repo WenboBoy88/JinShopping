@@ -13,8 +13,12 @@
 
 @interface ZWBShoppingMallCell : UICollectionViewCell
 
+@property (nonatomic, copy) dispatch_block_t convertClickBlock;
+
 /* 推荐数据 */
 @property (strong , nonatomic) ZWBShoppingMallModel *mallModel;
 
+/** 是否隐藏 默认隐藏*/
+@property (nonatomic, assign) BOOL isHiddenConvertBtn;
 
 @end

@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) NSArray *imageURLArr;
 
+@property (nonatomic, copy) NSString *placeHolderImageName;
+
 /** 点击banner图回调*/
 @property (nonatomic, copy) void(^clickBannerBlock)(NSInteger clickIndex);
 

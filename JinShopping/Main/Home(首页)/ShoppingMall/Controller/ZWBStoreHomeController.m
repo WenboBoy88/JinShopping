@@ -17,6 +17,7 @@
 #import "ZWBStoreHeaderView.h"
 
 @interface ZWBStoreHomeController ()<UIScrollViewDelegate>
+
 /** 底视图ScrollView*/
 @property (nonatomic, strong) UIScrollView *bgScrollerView;
 /** 存放内容的ScrollView*/

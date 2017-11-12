@@ -1,62 +1,73 @@
 //
-//  ZWBCouponController.m
+//  ZWBPresentListController.m
 //  JinShopping
 //
-//  Created by 张文博 on 2017/11/11.
+//  Created by 张文博 on 2017/11/12.
 //  Copyright © 2017年 张文博. All rights reserved.
 //
 
-#import "ZWBCouponController.h"
-
+#import "ZWBPresentListController.h"
 // Views
-#import "ZWBCouponCell.h"
+#import "ZWBPresentCell.h"
 
 // Others
-static NSString *ZWBCouponCellID = @"ZWBCouponCell";
+static NSString *ZWBPresentCellID = @"ZWBPresentCell";
 
-@interface ZWBCouponController ()
+@interface ZWBPresentListController ()
+
+
 
 @end
 
-@implementation ZWBCouponController
+@implementation ZWBPresentListController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self setupNav];
+    
+    [self setupUI];
 }
 
-#pragma mark - 初始化导航栏
 - (void)setupNav {
-    self.navigationItem.title = @"优惠券";
+    self.navigationItem.title = @"礼品列表";
     
 }
 
-#pragma mark - 初始化界面
 - (void)setupUI {
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZWBCouponCell" bundle:nil] forCellReuseIdentifier:ZWBCouponCellID];
-}
-
-#pragma mark - LoadData
-- (void)loadData {
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"ZWBPresentCell" bundle:nil] forCellReuseIdentifier:ZWBPresentCellID];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1.0f;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZWBCouponCell *cell = [tableView dequeueReusableCellWithIdentifier:ZWBCouponCellID forIndexPath:indexPath];
+    ZWBPresentCell *cell = [tableView dequeueReusableCellWithIdentifier:ZWBPresentCellID forIndexPath:indexPath];
     
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - UITableViewDataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120.0f;
+    return 80.0f;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
