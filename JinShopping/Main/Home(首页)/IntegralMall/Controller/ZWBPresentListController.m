@@ -9,13 +9,14 @@
 #import "ZWBPresentListController.h"
 // Views
 #import "ZWBPresentCell.h"
+#import "ZWBCommonHeaderView.h" // CommenHeaderView
 
 // Others
 static NSString *ZWBPresentCellID = @"ZWBPresentCell";
 
 @interface ZWBPresentListController ()
 
-
+@property (nonatomic, strong) ZWBCommonHeaderView *headerView;
 
 @end
 
@@ -65,7 +66,13 @@ static NSString *ZWBPresentCellID = @"ZWBPresentCell";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *
+    ZWBCommonHeaderView *headerView = [[ZWBCommonHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50) titleArr:nil];
+    
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 50.0f;
 }
 
 - (void)didReceiveMemoryWarning {

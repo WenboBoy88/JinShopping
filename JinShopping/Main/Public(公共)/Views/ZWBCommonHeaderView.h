@@ -10,4 +10,8 @@
 
 @interface ZWBCommonHeaderView : UIView
 
+- (instancetype)initWithFrame:(CGRect)frame titleArr:(NSArray *)titleArray;
+
+@property (nonatomic, strong) NSArray *titleArr;
+
 @end

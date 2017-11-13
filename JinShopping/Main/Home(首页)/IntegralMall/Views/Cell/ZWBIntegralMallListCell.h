@@ -12,7 +12,7 @@
 
 @interface ZWBIntegralMallListCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet ZWBTimeLimitView *newGoodsView;
+@property (weak, nonatomic) IBOutlet ZWBTimeLimitView *goodsView;
 
 @property (weak, nonatomic) IBOutlet UILabel *topTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topSubLabel;
