@@ -176,6 +176,9 @@
 		9AA33C241F95FECA0016EAC6 /* ZWBShoppingCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA33C231F95FECA0016EAC6 /* ZWBShoppingCategoryController.m */; };
 		9AA65E441F98313C009BA254 /* ZWBHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA65E431F98313C009BA254 /* ZWBHomeHeaderView.m */; };
 		9AB2ADAF1F9EE516007C3108 /* ZWBTakeoutFoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB2ADAE1F9EE516007C3108 /* ZWBTakeoutFoodController.m */; };
+		9AB910541FBADEC100087F12 /* ZWBShoppingCarToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB910531FBADEC100087F12 /* ZWBShoppingCarToolBarView.m */; };
+		9AB910571FBAF07F00087F12 /* ZWBShoppingCarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB910561FBAF07F00087F12 /* ZWBShoppingCarHeaderView.m */; };
+		9AB9105A1FBAF0A500087F12 /* ZWBShoppingCarFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB910591FBAF0A500087F12 /* ZWBShoppingCarFooterView.m */; };
 		9AB9E20A1F9DB8C20094BC26 /* ZWBListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9E2091F9DB8C20094BC26 /* ZWBListTableCell.m */; };
 		9AB9E2121F9DBC590094BC26 /* ZWBSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9E2111F9DBC590094BC26 /* ZWBSettingController.m */; };
 		9AC03BAF1FB99A9100332F13 /* ZWBShoppingCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC03BAE1FB99A9100332F13 /* ZWBShoppingCarController.m */; };
@@ -589,6 +592,12 @@
 		9AA65E431F98313C009BA254 /* ZWBHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBHomeHeaderView.m; sourceTree = "<group>"; };
 		9AB2ADAD1F9EE516007C3108 /* ZWBTakeoutFoodController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBTakeoutFoodController.h; sourceTree = "<group>"; };
 		9AB2ADAE1F9EE516007C3108 /* ZWBTakeoutFoodController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBTakeoutFoodController.m; sourceTree = "<group>"; };
+		9AB910521FBADEC100087F12 /* ZWBShoppingCarToolBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBShoppingCarToolBarView.h; sourceTree = "<group>"; };
+		9AB910531FBADEC100087F12 /* ZWBShoppingCarToolBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBShoppingCarToolBarView.m; sourceTree = "<group>"; };
+		9AB910551FBAF07F00087F12 /* ZWBShoppingCarHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBShoppingCarHeaderView.h; sourceTree = "<group>"; };
+		9AB910561FBAF07F00087F12 /* ZWBShoppingCarHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBShoppingCarHeaderView.m; sourceTree = "<group>"; };
+		9AB910581FBAF0A500087F12 /* ZWBShoppingCarFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBShoppingCarFooterView.h; sourceTree = "<group>"; };
+		9AB910591FBAF0A500087F12 /* ZWBShoppingCarFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBShoppingCarFooterView.m; sourceTree = "<group>"; };
 		9AB9E2081F9DB8C20094BC26 /* ZWBListTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBListTableCell.h; sourceTree = "<group>"; };
 		9AB9E2091F9DB8C20094BC26 /* ZWBListTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBListTableCell.m; sourceTree = "<group>"; };
 		9AB9E2101F9DBC590094BC26 /* ZWBSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBSettingController.h; sourceTree = "<group>"; };
@@ -2149,6 +2158,12 @@
 				9A9066541FB5773900CC243C /* ZWBStoreCustionView.m */,
 				9AC03BB01FB99D7500332F13 /* ZWBUnGoodsCarView.h */,
 				9AC03BB11FB99D7500332F13 /* ZWBUnGoodsCarView.m */,
+				9AB910521FBADEC100087F12 /* ZWBShoppingCarToolBarView.h */,
+				9AB910531FBADEC100087F12 /* ZWBShoppingCarToolBarView.m */,
+				9AB910551FBAF07F00087F12 /* ZWBShoppingCarHeaderView.h */,
+				9AB910561FBAF07F00087F12 /* ZWBShoppingCarHeaderView.m */,
+				9AB910581FBAF0A500087F12 /* ZWBShoppingCarFooterView.h */,
+				9AB910591FBAF0A500087F12 /* ZWBShoppingCarFooterView.m */,
 			);
 			path = CustionView;
 			sourceTree = "<group>";
@@ -2554,6 +2569,7 @@
 				9AEE13631FB829DD00DEB0F6 /* ZWBIntegralDetailFooterView.m in Sources */,
 				9AA230D91FB454A700C838D9 /* ZWBStoreHomeController.m in Sources */,
 				9AEC85601FA71F890024ADC7 /* ZWBTakeoutOrderInfoCell.m in Sources */,
+				9AB9105A1FBAF0A500087F12 /* ZWBShoppingCarFooterView.m in Sources */,
 				9A9066581FB5ABD700CC243C /* ZWBGoodsItemModel.m in Sources */,
 				9A6747BF1F9450CF00891A47 /* ZWBBaseViewController.m in Sources */,
 				9A90665B1FB5ABF400CC243C /* ZWBGoodsMainModel.m in Sources */,
@@ -2586,6 +2602,7 @@
 				9A26A1B11F98B7060022629E /* UIImageView+CornerRadius.m in Sources */,
 				9A8A09BB1F974BA3007F5C04 /* TAAbstractDotView.m in Sources */,
 				9A45ED761F90526A00B4E108 /* NSString+ZWBMD5Hash.m in Sources */,
+				9AB910571FBAF07F00087F12 /* ZWBShoppingCarHeaderView.m in Sources */,
 				9A9066551FB5773900CC243C /* ZWBStoreCustionView.m in Sources */,
 				9AEC85341FA6C7C50024ADC7 /* ZWBTakeoutEvalController.m in Sources */,
 				9A45ED8E1F9052D500B4E108 /* ZWBUtil.m in Sources */,
@@ -2621,6 +2638,7 @@
 				9A45ED9F1F90541000B4E108 /* ZWBRequestManager.m in Sources */,
 				9A153D0D1FB3550000EE2CC9 /* XWDrawerAnimator.m in Sources */,
 				9A4B83721F98F1150049AAD8 /* ZWBBaseRequest.m in Sources */,
+				9AB910541FBADEC100087F12 /* ZWBShoppingCarToolBarView.m in Sources */,
 				9AA33C091F95F3820016EAC6 /* ZWBBaseTableViewController.m in Sources */,
 				9A45ED9D1F90541000B4E108 /* ZWBDecimalNumberHandler.m in Sources */,
 				9A2AFE991FA18D9A00A2ED56 /* ZWBThrowLineTool.m in Sources */,

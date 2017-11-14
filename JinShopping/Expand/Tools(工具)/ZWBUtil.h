@@ -59,7 +59,5 @@
 /** 判断字符串是否为空*/
 + (BOOL)isBlankString:(NSString *)string;
 
-/** color生成image*/
-+ (UIImage *)imageWithColor:(UIColor *)color;
 
 @end

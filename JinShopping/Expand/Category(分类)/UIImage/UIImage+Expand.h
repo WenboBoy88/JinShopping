@@ -16,6 +16,8 @@
 + (UIImage *)imageWithScreenShotInView:(UIView *)view;
 /** 修改图片的大小，返回新的图片*/
 + (UIImage *)resizeImageToSize:(CGSize)size sizeOfImage:(UIImage*)image;
+/** color生成image*/
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 /** 通过视频链接加载第一帧*/
 + (UIImage*)thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time;

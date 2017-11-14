@@ -12,7 +12,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+
+    
+}
+- (IBAction)addClick:(UIButton *)sender {
+}
+- (IBAction)subClick:(UIButton *)sender {
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
