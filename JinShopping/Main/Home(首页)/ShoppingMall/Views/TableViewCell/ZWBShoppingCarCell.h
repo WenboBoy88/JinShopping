@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZWBShoppingCarModel.h"
 
 @interface ZWBShoppingCarCell : UITableViewCell
 

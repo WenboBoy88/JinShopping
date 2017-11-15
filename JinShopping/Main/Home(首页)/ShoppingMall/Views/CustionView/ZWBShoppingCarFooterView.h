@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZWBShoppingCarModel.h"
 
-@interface ZWBShoppingCarFooterView : UIView
+@interface ZWBShoppingCarFooterView : UITableViewHeaderFooterView
+
+@property (nonatomic, strong) NSMutableArray *shopGoodsArray;
+
++ (CGFloat)getCartFooterHeight;
 
 @end

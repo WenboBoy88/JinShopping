@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZWBShoppingCarHeaderView : UIView
+@interface ZWBShoppingCarHeaderView : UITableViewHeaderFooterView
+
+@property (nonatomic, strong) UIButton *selectStoreGoodsButton;
+
++ (CGFloat)getCartHeaderHeight;
+
 
 @end
