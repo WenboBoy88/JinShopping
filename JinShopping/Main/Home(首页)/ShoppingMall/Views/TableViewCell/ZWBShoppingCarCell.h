@@ -9,6 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "ZWBShoppingCarModel.h"
 
+
+@class ZWBShoppingCarCell;
+@protocol ZWBShoppingCarCellDelegate <NSObject>
+
+@optional
+- (void)clickButton:(UIButton *)button superView:(ZWBShoppingCarCell *)cell  selected:(BOOL)selected indexPath:(NSIndexPath *)indexPath;
+- (void)operationSymbol:(UIButton *)button quantityCount:(NSInteger)quantityCount;
+
+@end
+
 @interface ZWBShoppingCarCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *selectButton;
@@ -16,5 +26,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
+
+@property (nonatomic, strong) NSIndexPath *indexPath;
+
+@property (nonatomic, assign) id<ZWBShoppingCarCellDelegate> delegate;
+
+@property (nonatomic, strong) ZWBShoppingCarModel *model;
+
+@property (nonatomic, copy) void(^numberChangeBlock)(NSInteger numCount);
 
 @end

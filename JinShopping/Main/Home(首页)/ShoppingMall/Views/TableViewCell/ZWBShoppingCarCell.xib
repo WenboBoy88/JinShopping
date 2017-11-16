@@ -26,6 +26,10 @@
                             <constraint firstAttribute="height" constant="22" id="sMA-nI-Mxc"/>
                         </constraints>
                         <state key="normal" image="sc_circle_normal"/>
+                        <connections>
+                            <action selector="selectClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="k8o-ZB-sdp"/>
+                            <action selector="selectedClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bqS-mT-RwO"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gj4-mV-Aoc">
                         <rect key="frame" x="35" y="8" width="64" height="64"/>
@@ -112,7 +116,7 @@
                 <outlet property="selectButton" destination="Kq1-nO-kPY" id="PsI-go-mWi"/>
                 <outlet property="titleLabel" destination="g4j-kf-LFh" id="ia2-XK-Qqb"/>
             </connections>
-            <point key="canvasLocation" x="25" y="34"/>
+            <point key="canvasLocation" x="20" y="24"/>
         </tableViewCell>
     </objects>
     <resources>

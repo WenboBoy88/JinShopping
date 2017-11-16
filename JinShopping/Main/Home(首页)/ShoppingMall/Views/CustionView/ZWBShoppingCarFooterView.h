@@ -11,6 +11,8 @@
 
 @interface ZWBShoppingCarFooterView : UITableViewHeaderFooterView
 
+@property (nonatomic, strong) NSIndexPath *indexPath;
+
 @property (nonatomic, strong) NSMutableArray *shopGoodsArray;
 
 + (CGFloat)getCartFooterHeight;

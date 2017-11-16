@@ -41,7 +41,7 @@
                                  forState:UIControlStateNormal];
     [self.selectStoreGoodsButton setImage:[UIImage imageNamed:@"sc_circle_select"]
                                  forState:UIControlStateSelected];
-    self.selectStoreGoodsButton.backgroundColor=[UIColor clearColor];
+    self.selectStoreGoodsButton.backgroundColor = [UIColor clearColor];
     [self.selectStoreGoodsButton addTarget:self action:@selector(selectShopGoodsClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.selectStoreGoodsButton];
     self.selectStoreGoodsButton.sd_layout
@@ -89,7 +89,11 @@
 
 #pragma mark - UIButton Click
 - (void)selectShopGoodsClick:(UIButton *)button {
+    button.selected = !button.selected;
     
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clickStoreHeaderView:isSelected:section:)]) {
+        [self.delegate clickStoreHeaderView:self isSelected:button.selected section:self.section];
+    }
 }
 
 

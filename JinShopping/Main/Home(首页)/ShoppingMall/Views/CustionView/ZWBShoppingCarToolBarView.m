@@ -159,16 +159,26 @@ static NSInteger const SelectButtonTag = 122;
     } else {
         self.balanceButton.enabled = NO;
     }
+    // 点击结算按钮的操作
+    if (self.delegate && [self.delegate respondsToSelector:@selector(selectAllButtonClick:)]) {
+        [self.delegate selectAllButtonClick:button.selected];
+    }
+    
 }
 
 // 删除事件的操作
 - (void)deleteClick:(UIButton *)button {
-    
+    // 点击结算按钮的操作
+    if (self.delegate && [self.delegate respondsToSelector:@selector(deleteSelectGoodsClick)]) {
+        [self.delegate deleteSelectGoodsClick];
+    }
 }
 
 // 结算操作
 - (void)balanceClick:(UIButton *)button {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(balanceButton)]) {
+        [self.delegate balanceButtonClick];
+    }
 }
 
 #pragma mark - Getter Setter Methods

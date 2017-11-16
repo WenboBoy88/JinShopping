@@ -8,9 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZWBShoppingCarHeaderView;
+@protocol ZWBShoppingCarHeaderDelegate <NSObject>
+
+@optional
+/** 点击头部按钮的操作*/
+- (void)clickStoreHeaderView:(ZWBShoppingCarHeaderView *)currentView isSelected:(BOOL)isSelected section:(NSInteger)section ;
+
+@end
+
+
 @interface ZWBShoppingCarHeaderView : UITableViewHeaderFooterView
 
 @property (nonatomic, strong) UIButton *selectStoreGoodsButton;
+
+@property (nonatomic, assign) id<ZWBShoppingCarHeaderDelegate> delegate;
+
+@property (nonatomic, assign) NSInteger section;
 
 + (CGFloat)getCartHeaderHeight;
 

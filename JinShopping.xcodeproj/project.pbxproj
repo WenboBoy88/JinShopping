@@ -188,6 +188,7 @@
 		9AC03BB21FB99D7500332F13 /* ZWBUnGoodsCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC03BB11FB99D7500332F13 /* ZWBUnGoodsCarView.m */; };
 		9AC03BB61FB9A6D400332F13 /* ZWBShoppingCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC03BB41FB9A6D400332F13 /* ZWBShoppingCarCell.m */; };
 		9AC03BB71FB9A6D400332F13 /* ZWBShoppingCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC03BB51FB9A6D400332F13 /* ZWBShoppingCarCell.xib */; };
+		9AC6B7E91FBDA26900667664 /* ZWBNummberCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6B7E81FBDA26900667664 /* ZWBNummberCount.m */; };
 		9AC856361FA74EF50022511B /* ZWBPayMethodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC856341FA74EF50022511B /* ZWBPayMethodsCell.m */; };
 		9AC856371FA74EF50022511B /* ZWBPayMethodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC856351FA74EF50022511B /* ZWBPayMethodsCell.xib */; };
 		9AC8563A1FA753CF0022511B /* ZWBTakeoutPayFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC856391FA753CF0022511B /* ZWBTakeoutPayFooterView.m */; };
@@ -618,6 +619,8 @@
 		9AC03BB31FB9A6D400332F13 /* ZWBShoppingCarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBShoppingCarCell.h; sourceTree = "<group>"; };
 		9AC03BB41FB9A6D400332F13 /* ZWBShoppingCarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBShoppingCarCell.m; sourceTree = "<group>"; };
 		9AC03BB51FB9A6D400332F13 /* ZWBShoppingCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBShoppingCarCell.xib; sourceTree = "<group>"; };
+		9AC6B7E71FBDA26900667664 /* ZWBNummberCount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBNummberCount.h; sourceTree = "<group>"; };
+		9AC6B7E81FBDA26900667664 /* ZWBNummberCount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBNummberCount.m; sourceTree = "<group>"; };
 		9AC856331FA74EF50022511B /* ZWBPayMethodsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWBPayMethodsCell.h; sourceTree = "<group>"; };
 		9AC856341FA74EF50022511B /* ZWBPayMethodsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWBPayMethodsCell.m; sourceTree = "<group>"; };
 		9AC856351FA74EF50022511B /* ZWBPayMethodsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWBPayMethodsCell.xib; sourceTree = "<group>"; };
@@ -1857,6 +1860,8 @@
 				9A4CCC971F9E3AB700C821E2 /* ZWBInputNormalCell.m */,
 				9AEE137A1FB85DC700DEB0F6 /* ZWBCommonHeaderView.h */,
 				9AEE137B1FB85DC700DEB0F6 /* ZWBCommonHeaderView.m */,
+				9AC6B7E71FBDA26900667664 /* ZWBNummberCount.h */,
+				9AC6B7E81FBDA26900667664 /* ZWBNummberCount.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2630,6 +2635,7 @@
 				9A4CCC981F9E3AB700C821E2 /* ZWBInputNormalCell.m in Sources */,
 				9AEE13661FB82A0500DEB0F6 /* ZWBIntegralMallItemHeaderView.m in Sources */,
 				9A8A09BF1F974BA3007F5C04 /* SDCollectionViewCell.m in Sources */,
+				9AC6B7E91FBDA26900667664 /* ZWBNummberCount.m in Sources */,
 				9A153CFF1FB3550000EE2CC9 /* XWInteractiveTransition.m in Sources */,
 				9A45EDA01F90541000B4E108 /* ZWBStrUtility.m in Sources */,
 				9A26A1B11F98B7060022629E /* UIImageView+CornerRadius.m in Sources */,
