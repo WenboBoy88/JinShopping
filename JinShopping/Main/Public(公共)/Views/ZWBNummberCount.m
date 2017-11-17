@@ -67,7 +67,11 @@ static CGFloat const Button_Width_Height = 28;
     self.numberTT.layer.borderWidth = 1.3;
     self.numberTT.font= PFR_FONT(15.0);
     self.numberTT.delegate = self;
+#if 0
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange:) name:@"UITextFieldTextDidEndEditingNotification" object:self.numberTT];
+#else
+    [self.numberTT addTarget:self action:@selector(textChangeAction) forControlEvents:UIControlEventEditingChanged];
+#endif
     [self addSubview:self.numberTT];
     
     /************************** 加 ****************************/
@@ -118,6 +122,26 @@ static CGFloat const Button_Width_Height = 28;
 }
 
 
+#pragma mark - 监听信息
+- (void)textChangeAction {
+    NSString *text = self.numberTT.text;
+    NSInteger changeNum = 0;
+    if (text.integerValue > self.totalNum && self.totalNum != 0) {
+        self.currentCountNumber = self.totalNum;
+        self.numberTT.text = [NSString stringWithFormat:@"%@", @(self.totalNum)];
+        changeNum = self.totalNum;
+    } else if (text.integerValue < 1){
+        self.numberTT.text = @"1";
+        changeNum = 1;
+    } else {
+        self.currentCountNumber = text.integerValue;
+        changeNum = self.currentCountNumber;
+    }
+    
+    if (self.numberChangeBlock) {
+        self.numberChangeBlock(changeNum);
+    }
+}
 
 #pragma mark - Nofi
 - (void)textChange:(NSNotification *)nofi {

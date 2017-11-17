@@ -27,8 +27,7 @@
                         </constraints>
                         <state key="normal" image="sc_circle_normal"/>
                         <connections>
-                            <action selector="selectClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="k8o-ZB-sdp"/>
-                            <action selector="selectedClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bqS-mT-RwO"/>
+                            <action selector="selectClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jrL-Rp-zRC"/>
                         </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gj4-mV-Aoc">
@@ -110,11 +109,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="countLabel" destination="SGN-se-UtA" id="ikE-sY-jOj"/>
-                <outlet property="headerImageView" destination="gj4-mV-Aoc" id="saQ-4O-gIe"/>
-                <outlet property="logoImageView" destination="gj4-mV-Aoc" id="Enk-Lm-psO"/>
-                <outlet property="priceLabel" destination="h9I-5W-go6" id="xNu-sY-x2U"/>
-                <outlet property="selectButton" destination="Kq1-nO-kPY" id="PsI-go-mWi"/>
-                <outlet property="titleLabel" destination="g4j-kf-LFh" id="ia2-XK-Qqb"/>
+                <outlet property="goodsImageView" destination="gj4-mV-Aoc" id="lx0-cQ-kwV"/>
+                <outlet property="goodsNameLabel" destination="g4j-kf-LFh" id="jgk-f1-LPV"/>
+                <outlet property="goodsPriceLabel" destination="h9I-5W-go6" id="J33-rW-Fcg"/>
+                <outlet property="selectGoodsButton" destination="Kq1-nO-kPY" id="OtC-D1-5sr"/>
             </connections>
             <point key="canvasLocation" x="20" y="24"/>
         </tableViewCell>

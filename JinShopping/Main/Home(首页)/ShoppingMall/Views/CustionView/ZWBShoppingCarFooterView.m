@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UILabel *priceLabel;
 
+@property (nonatomic, strong) UIView *bottomView;
+
 @end
 
 @implementation ZWBShoppingCarFooterView
@@ -37,15 +39,19 @@
 #pragma mark - UI
 - (void)initCartFooterView{
     
-    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = COLOR_WHITE;
     
     self.priceLabel = [[UILabel alloc] init];
     self.priceLabel.textAlignment = NSTextAlignmentRight;
-    self.priceLabel.text = @"合计 ￥0";
+    self.priceLabel.text = @"小计 ￥0";
     self.priceLabel.textColor = COLOR_333;
+    self.priceLabel.font = PFR_FONT(14.0f);
     self.priceLabel.attributedText = [ZWBUtil getAttribugedString:_priceLabel.text range:NSMakeRange(3, 2) color:COLOR_MAIN_RED];
-    
     [self addSubview:self.priceLabel];
+    
+    self.bottomView = [[UIView alloc] init];
+    self.bottomView.backgroundColor = COLOR_MAIN_BG;
+    [self addSubview:self.bottomView];
 }
 
 
@@ -55,6 +61,7 @@
     [super layoutSubviews];
     
     self.priceLabel.frame = CGRectMake(10, 0.5, SCREEN_WIDTH - 20, 30);
+    self.bottomView.frame = CGRectMake(0, 30, SCREEN_WIDTH, 10);
 }
 
 #pragma mark - Getter Setter Methods
@@ -65,17 +72,20 @@
     NSNumber *shopPrice = nil;
     float finalPrice = 0 ;
     for (ZWBShoppingCarModel *model in shopGoodsArray) {
-        shopPrice = @(model.p_quantity * model.p_price);
-        finalPrice += shopPrice.floatValue;
+        if (model.isSelect) {
+            shopPrice = @(model.p_quantity * model.p_price);
+            finalPrice += shopPrice.floatValue;
+        }
     }
     
-    self.priceLabel.text = [NSString stringWithFormat:@"合计:￥%.2f", finalPrice];
+    self.priceLabel.text = [NSString stringWithFormat:@"小计 ￥%.2f", finalPrice];
+    self.priceLabel.attributedText = [ZWBUtil getAttribugedString:self.priceLabel.text range:NSMakeRange(3, self.priceLabel.text.length - 3) color:COLOR_MAIN_RED];
 }
 
 // 获取高度
 + (CGFloat)getCartFooterHeight{
     
-    return 50;
+    return 40;
 }
 
 

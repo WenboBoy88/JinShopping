@@ -17,9 +17,9 @@
 @property (nonatomic, strong) NSString  *p_name;
 
 @property (nonatomic, strong) NSString  *p_imageUrl;
-
+/** 存货*/
 @property (nonatomic, assign) NSInteger p_stock;
-
+/** 选中数*/
 @property (nonatomic, assign) NSInteger p_quantity;
 
 //商品是否被选中

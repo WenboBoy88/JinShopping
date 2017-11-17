@@ -21,10 +21,10 @@
 
 @interface ZWBShoppingCarCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIButton *selectButton;
-@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *selectGoodsButton;
+@property (weak, nonatomic) IBOutlet UIImageView *goodsImageView;
+@property (weak, nonatomic) IBOutlet UILabel *goodsNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goodsPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 
 @property (nonatomic, strong) NSIndexPath *indexPath;

@@ -39,9 +39,7 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     [super viewDidLoad];
 
     [self setupBase];
-    
-    [self setupUI];
-    
+        
     [self loadData];
 }
 
@@ -49,21 +47,16 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
 - (void)setupBase {
     self.navigationItem.title = @"购物车";
     
-    
-}
-
-- (void)setupUI {
-    // 注册
-    [self.tableView registerClass:[ZWBShoppingCarHeaderView class] forHeaderFooterViewReuseIdentifier:ZWBShoppingCarHeaderViewID];
-    [self.tableView registerClass:[ZWBShoppingCarFooterView class] forHeaderFooterViewReuseIdentifier:ZWBShoppingCarFooterViewID];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZWBShoppingCarCell" bundle:nil] forCellReuseIdentifier: ZWBShoppingCarCellID];
+    // 对总价格进行观察
+    [self.cartViewModel addObserver:self forKeyPath:@"allPrices" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
 }
 
 - (void)loadData {
-    if (kArrayIsEmpty(self.dataArray)) {
 
-    }
-    
+    // 加载数据
+    [self.cartViewModel getData];
+    [self.tableView reloadData];
+
 }
 
 
@@ -73,7 +66,8 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     return self.cartViewModel.cartData.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.cartViewModel.cartData[section] count];
+    NSArray *storeArr = self.cartViewModel.cartData[section];
+    return [storeArr count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,6 +83,7 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
 // 创建Cell
 - (void)configureCell:(ZWBShoppingCarCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSMutableArray *shopArray = self.cartViewModel.cartData[indexPath.section];
     ZWBShoppingCarModel *model = shopArray[indexPath.row];
     //数量改变
@@ -99,7 +94,9 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     
     // 刷新界面
     [self.cartViewModel setOpertaionStatusBlock:^{
-        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
+        [UIView performWithoutAnimation:^{
+            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
+        }];
     }];
     
     cell.model = model;
@@ -107,21 +104,28 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
 
 
 #pragma mark - UITableViewDelegate
+// 行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80.0f;
 }
-/** 头视图*/
+
+// 头视图
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     ZWBShoppingCarHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ZWBShoppingCarHeaderViewID];
     headerView.delegate = self;
     headerView.section = section;
+    headerView.isButtonSelected = [self.cartViewModel.shopSelectArray[section] boolValue];
+    
     return headerView;
 }
 
+// 头高
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return [ZWBShoppingCarHeaderView getCartHeaderHeight];
 }
+
+// 尾视图
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     
     NSMutableArray *shopArray = self.cartViewModel.cartData[section];
@@ -131,6 +135,7 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     return footerView;
 }
 
+// 尾高
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return [ZWBShoppingCarFooterView getCartFooterHeight];
 }
@@ -143,28 +148,29 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     // 操作成功后进行刷新
     WeakSelf(self);
     [self.cartViewModel setOpertaionStatusBlock:^{
-        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
+        [UIView performWithoutAnimation:^{
+            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
+        }];
     }];
 }
 
 // 店铺头部的代理
 #pragma mark - ZWBShoppingCarHeaderDelegate
-- (void)clickStoreHeaderView:(ZWBShoppingCarHeaderView *)currentView isSelected:(BOOL)isSelected section:(NSInteger)section {
+- (void)clickStoreGoodsButton:(UIButton *)button headerView:(ZWBShoppingCarHeaderView *)currentView section:(NSInteger)section {
     // 店铺的数据
     NSMutableArray *shopArray = self.cartViewModel.cartData[section];
     // 替换数组中存放的当前点击的数据
-    [self.cartViewModel.shopSelectArray replaceObjectAtIndex:section withObject:@(isSelected)];
+    [self.cartViewModel.shopSelectArray replaceObjectAtIndex:section withObject:@(button.isSelected)];
     // 替换选中的状态
     for (ZWBShoppingCarModel *model in shopArray) {
-        model.isSelect = isSelected;
+        model.isSelect = button.isSelected;
     }
     
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
-    
     self.cartViewModel.allPrices = [self.cartViewModel getAllPrices];
-    //店铺选中状态
-    currentView.selectStoreGoodsButton.selected = [self.cartViewModel.shopSelectArray[section] boolValue];
-    
+    WeakSelf(self);
+    [UIView performWithoutAnimation:^{
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
+    }];
 }
 
 // 底部操作栏目的代理
@@ -184,15 +190,26 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     
 }
 
+#pragma mark - Obser
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"%@ %@ %@ %@ %@", keyPath, object, change[@"new"], change[@"old"], context);
+    
+    self.toolBarView.money = [change[@"new"] floatValue];
+}
+
 #pragma mark - Lazy laod
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.backgroundColor = COLOR_MAIN_BG;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [self.view addSubview:_tableView];
-        
+        // 注册
+        [_tableView registerClass:[ZWBShoppingCarHeaderView class] forHeaderFooterViewReuseIdentifier:ZWBShoppingCarHeaderViewID];
+        [_tableView registerClass:[ZWBShoppingCarFooterView class] forHeaderFooterViewReuseIdentifier:ZWBShoppingCarFooterViewID];
+        [_tableView registerNib:[UINib nibWithNibName:@"ZWBShoppingCarCell" bundle:nil] forCellReuseIdentifier: ZWBShoppingCarCellID];
+        // 布局
         _tableView.sd_layout
         .topEqualToView(self.view)
         .leftEqualToView(self.view)
@@ -236,8 +253,17 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     return _cartViewModel;
 }
 
+
+#pragma mark - dealloc
+- (void)dealloc {
+    
+    [self.cartViewModel removeObserver:self forKeyPath:@"allPrices"];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
+    [self.cartViewModel removeObserver:self forKeyPath:@"allPrices"];
     // Dispose of any resources that can be recreated.
 }
 

@@ -24,30 +24,22 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        
-    }
-    return self;
-}
-
 - (void)setHeaderUI {
     
     self.contentView.backgroundColor = [UIColor whiteColor];
     
     self.selectStoreGoodsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.selectStoreGoodsButton.frame = CGRectZero;
+    self.selectStoreGoodsButton.backgroundColor = [UIColor clearColor];
     [self.selectStoreGoodsButton setImage:[UIImage imageNamed:@"sc_circle_normal"]
                                  forState:UIControlStateNormal];
     [self.selectStoreGoodsButton setImage:[UIImage imageNamed:@"sc_circle_select"]
                                  forState:UIControlStateSelected];
-    self.selectStoreGoodsButton.backgroundColor = [UIColor clearColor];
     [self.selectStoreGoodsButton addTarget:self action:@selector(selectShopGoodsClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.selectStoreGoodsButton];
     self.selectStoreGoodsButton.sd_layout
     .centerYEqualToView(self)
-    .leftSpaceToView(self, 12)
-    .widthIs(26)
+    .leftSpaceToView(self, 8)
+    .widthIs(22)
     .heightEqualToWidth();
     
     self.storeNameButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -58,10 +50,11 @@
     self.storeNameButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.storeNameButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     self.storeNameButton.titleLabel.font = PFR_FONT(13);
+    [self addSubview:self.storeNameButton];
 
     self.storeNameButton.sd_layout
-    .leftSpaceToView(self.selectStoreGoodsButton, 8)
-    .centerYEqualToView(self)
+    .leftSpaceToView(self.selectStoreGoodsButton, 0)
+    .centerYEqualToView(self.selectStoreGoodsButton)
     .rightSpaceToView(self, 12)
     .heightIs(28);
     self.storeNameButton.titleLabel.sd_layout
@@ -72,10 +65,8 @@
     self.storeNameButton.imageView.sd_layout
     .centerYEqualToView(self.storeNameButton)
     .leftSpaceToView(self.storeNameButton.titleLabel, 8)
-    .widthIs(16)
-    .heightEqualToWidth();
-    
-    [self addSubview:self.storeNameButton];
+    .widthIs(8)
+    .heightIs(14);
 }
 
 - (void)layoutSubviews {
@@ -90,9 +81,9 @@
 #pragma mark - UIButton Click
 - (void)selectShopGoodsClick:(UIButton *)button {
     button.selected = !button.selected;
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(clickStoreHeaderView:isSelected:section:)]) {
-        [self.delegate clickStoreHeaderView:self isSelected:button.selected section:self.section];
+    NSLog(@"点击头部: %ld  选中状态: %d", self.section, self.selectStoreGoodsButton.selected);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clickStoreGoodsButton:headerView:section:)]) {
+        [self.delegate clickStoreGoodsButton:self.selectStoreGoodsButton headerView:self section:self.section];
     }
 }
 
@@ -101,6 +92,12 @@
 + (CGFloat)getCartHeaderHeight{
     
     return 50;
+}
+
+- (void)setIsButtonSelected:(BOOL)isButtonSelected {
+    _isButtonSelected = isButtonSelected;
+    
+    self.selectStoreGoodsButton.selected = isButtonSelected;
 }
 
 

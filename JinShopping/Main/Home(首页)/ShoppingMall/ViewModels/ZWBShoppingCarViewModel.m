@@ -56,11 +56,12 @@
     NSMutableArray *storeArray = [NSMutableArray arrayWithCapacity:allCount];
     NSMutableArray *shopSelectAarry = [NSMutableArray arrayWithCapacity:allCount];
     //创造店铺数据
-    for (int i = 0; i<allCount; i++) {
+    for (int i = 0; i < allCount; i++) {
         //创造店铺下商品数据
+        // 店铺下数据的个数
         NSInteger goodsCount = [_shopGoodsCount[self.random] intValue];
         NSMutableArray *goodsArray = [NSMutableArray arrayWithCapacity:goodsCount];
-        for (int x = 0; x<goodsCount; x++) {
+        for (int x = 0; x < goodsCount; x++) {
             ZWBShoppingCarModel *cartModel = [[ZWBShoppingCarModel alloc] init];
             cartModel.p_id = @"122115465400";
             cartModel.p_price = [_goodsPriceArray[self.random] floatValue];
@@ -79,48 +80,42 @@
 
 - (float)getAllPrices {
     
-    __block float allPrices = 0;
-    NSInteger shopCount = self.cartData.count;
-    NSInteger shopSelectCount = self.shopSelectArray.count;
-    if (shopSelectCount == shopCount && shopCount != 0) {
+    NSInteger storeCount = self.cartData.count;
+    NSInteger storeSelectCount = self.shopSelectArray.count;
+    if (storeSelectCount == storeCount && storeCount != 0) {
         self.isSelectAll = YES;
     }
-//    NSArray *pricesArray = [[[self.cartData rac_sequence] map:^id(NSMutableArray *value) {
-//        return [[[value rac_sequence] filter:^BOOL(JSCartModel *model) {
-//            if (!model.isSelect) {
-//                self.isSelectAll = NO;
-//            }
-//            return model.isSelect;
-//        }] map:^id(JSCartModel *model) {
-//            return @(model.p_quantity*model.p_price);
-//        }];
-//    }] array];
-//    for (NSArray *priceA in pricesArray) {
-//        for (NSNumber *price in priceA) {
-//            allPrices += price.floatValue;
-//        }
-//    }
+    // 遍历
+    float allPrices = 0;
+    for (NSArray *storeArr in self.cartData) {
+        for (ZWBShoppingCarModel *model in storeArr) {
+            if (!model.isSelect) {
+                self.isSelectAll = NO;
+            }
+            allPrices += model.p_quantity * model.p_price;
+        }
+    }
+    self.allPrices = allPrices;
     
     return allPrices;
 }
 
 - (void)selectAll:(BOOL)isSelect{
     
-    __block float allPrices = 0;
     self.isSelectAll = isSelect;
-    
-//    self.shopSelectArray = [[[[self.shopSelectArray rac_sequence] map:^id(NSNumber *value) {
-//        return @(isSelect);
-//    }] array] mutableCopy];
-//    self.cartData = [[[[self.cartData rac_sequence] map:^id(NSMutableArray *value) {
-//        return  [[[[value rac_sequence] map:^id(JSCartModel *model) {
-//            [model setValue:@(isSelect) forKey:@"isSelect"];
-//            if (model.isSelect) {
-//                allPrices += model.p_quantity*model.p_price;
-//            }
-//            return model;
-//        }] array] mutableCopy];
-//    }] array] mutableCopy];
+
+    for (NSInteger i = 0; i < self.shopSelectArray.count; i++) {
+        [self.shopSelectArray replaceObjectAtIndex:i withObject:@(isSelect)];
+    }
+    float allPrices = 0;
+    for (NSMutableArray *storeArr in self.cartData) {
+        for (ZWBShoppingCarModel *model in storeArr) {
+            model.isSelect = isSelect;
+            if (model.isSelect) {
+                allPrices += model.p_quantity * model.p_price;
+            }
+        }
+    }
     self.allPrices = allPrices;
     
     if (self.opertaionStatusBlock) {
@@ -152,7 +147,6 @@
     
     self.allPrices = [self getAllPrices];
     
-//    [self.cartTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
     
 }
 
@@ -165,13 +159,28 @@
     
     [model setValue:@(quantity) forKey:@"p_quantity"];
     
+    // 刷新界面
     if (self.opertaionStatusBlock) {
         self.opertaionStatusBlock();
     }
-//    [self.cartTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
     
     self.allPrices = [self getAllPrices];
 }
 
+
+#pragma mark - Lazy load
+- (NSMutableArray *)cartData {
+    if (!_cartData) {
+        _cartData = [[NSMutableArray alloc] init];
+    }
+    return _cartData;
+}
+
+- (NSMutableArray *)shopSelectArray {
+    if (!_shopGoodsCount) {
+        _shopGoodsCount = [[NSMutableArray alloc] init];
+    }
+    return _shopSelectArray;
+}
 
 @end

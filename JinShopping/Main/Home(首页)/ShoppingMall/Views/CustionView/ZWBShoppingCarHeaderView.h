@@ -13,7 +13,7 @@
 
 @optional
 /** 点击头部按钮的操作*/
-- (void)clickStoreHeaderView:(ZWBShoppingCarHeaderView *)currentView isSelected:(BOOL)isSelected section:(NSInteger)section ;
+- (void)clickStoreGoodsButton:(UIButton *)button headerView:(ZWBShoppingCarHeaderView *)currentView section:(NSInteger)section ;
 
 @end
 
@@ -25,6 +25,8 @@
 @property (nonatomic, assign) id<ZWBShoppingCarHeaderDelegate> delegate;
 
 @property (nonatomic, assign) NSInteger section;
+
+@property (nonatomic, assign) BOOL isButtonSelected;
 
 + (CGFloat)getCartHeaderHeight;
 

@@ -51,7 +51,16 @@ static NSInteger const SelectButtonTag = 122;
     
     CGFloat wd = SCREEN_WIDTH * 2 / 7;
     
-    /* 结算 */
+    UIView *topView = [[UIView alloc] init];
+    topView.backgroundColor = COLOR_MAIN_BG;
+    [self addSubview:topView];
+    topView.sd_layout
+    .topEqualToView(self)
+    .leftEqualToView(self)
+    .rightEqualToView(self)
+    .heightIs(1);
+    
+    // 结算
     UIButton *balanceButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    button.frame = CGRectMake(SCREEN_WIDTH - wd, 0, wd, self.frame.size.height);
     [balanceButton setBackgroundImage:[UIImage imageWithColor:COLOR_MAIN_RED] forState:UIControlStateNormal];
@@ -81,26 +90,31 @@ static NSInteger const SelectButtonTag = 122;
     [deleteBtn setImage:IMAGE(@"sc_delete") forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteClick:) forControlEvents:UIControlEventTouchUpInside];
     deleteBtn.enabled = NO;
-    deleteBtn.hidden = YES;
     deleteBtn.tag = DeleteButtonTag;
     [self addSubview:deleteBtn];
     self.deleteButton = deleteBtn;
     deleteBtn.sd_layout
-    .rightSpaceToView(balanceButton, 0)
+    .rightSpaceToView(balanceButton, 2)
     .centerYEqualToView(balanceButton)
-    .widthIs(60)
+    .widthIs(50)
     .heightEqualToWidth();
+    deleteBtn.imageView.sd_layout
+    .centerXEqualToView(deleteBtn)
+    .centerYEqualToView(deleteBtn)
+    .widthRatioToView(deleteBtn, 0.5)
+    .heightRatioToView(deleteBtn, 0.5);
     
     UIView *lineView = [[UIView alloc] init];
 //    lineView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 0.5);
     lineView.backgroundColor  = RGBA(210, 210, 210, 1);
     [self addSubview:lineView];
     lineView.sd_layout
-    .rightSpaceToView(balanceButton, 0)
+    .rightSpaceToView(deleteBtn, 0)
     .centerYEqualToView(deleteBtn)
     .widthIs(1.0)
     .heightIs(20);
     
+
     // 全选
     UIButton *selectAllButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    selectAllButton.frame = CGRectMake(0, 0, 78, self.frame.size.height);
@@ -119,27 +133,30 @@ static NSInteger const SelectButtonTag = 122;
     .topEqualToView(self)
     .leftEqualToView(self)
     .bottomEqualToView(self)
-    .widthIs(80);
+    .widthIs(100);
     selectAllButton.imageView.sd_layout
     .centerYEqualToView(selectAllButton)
-    .leftSpaceToView(selectAllButton, 2)
-    .widthIs(26)
+    .leftSpaceToView(selectAllButton, 8)
+    .widthIs(15.5)
     .heightEqualToWidth();
     selectAllButton.titleLabel.sd_layout
     .centerYEqualToView(selectAllButton)
-    .leftSpaceToView(selectAllButton.imageView, 5)
-    .rightSpaceToView(selectAllButton, 2)
+    .leftSpaceToView(selectAllButton.imageView, 4)
+    .rightSpaceToView(selectAllButton, 1)
     .heightIs(26);
-
+    
     // 价格
     UILabel *priceLabel = [[UILabel alloc] init];
 //    priceLabel.frame = CGRectMake(wd, 0, SCREEN_WIDTH - wd * 2 - 5, self.frame.size.height);
-    priceLabel.text = [NSString stringWithFormat:@"合计￥:%@",@(0.00)];
-    priceLabel.textColor = [UIColor blackColor];
+    priceLabel.text = [NSString stringWithFormat:@"合计 ￥%@",@(0.00)];
+    priceLabel.textColor = COLOR_333;
+    priceLabel.attributedText = [ZWBUtil getAttribugedString:priceLabel.text range:NSMakeRange(3, priceLabel.text.length - 3) color:COLOR_MAIN_RED];
+    priceLabel.isAttributedContent = YES;
     priceLabel.font = PFR_FONT(15);
     priceLabel.textAlignment = NSTextAlignmentRight;
     [self addSubview:priceLabel];
     self.allMoneyLabel = priceLabel;
+    
     priceLabel.sd_layout
     .leftSpaceToView(selectAllButton, 5)
     .rightSpaceToView(lineView, 5)
