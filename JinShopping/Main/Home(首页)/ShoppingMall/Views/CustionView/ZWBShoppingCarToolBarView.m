@@ -133,7 +133,7 @@ static NSInteger const SelectButtonTag = 122;
     .topEqualToView(self)
     .leftEqualToView(self)
     .bottomEqualToView(self)
-    .widthIs(100);
+    .widthIs(88);
     selectAllButton.imageView.sd_layout
     .centerYEqualToView(selectAllButton)
     .leftSpaceToView(selectAllButton, 8)
@@ -158,7 +158,7 @@ static NSInteger const SelectButtonTag = 122;
     self.allMoneyLabel = priceLabel;
     
     priceLabel.sd_layout
-    .leftSpaceToView(selectAllButton, 5)
+    .leftSpaceToView(selectAllButton, 4)
     .rightSpaceToView(lineView, 5)
     .centerYEqualToView(selectAllButton)
     .heightIs(26);

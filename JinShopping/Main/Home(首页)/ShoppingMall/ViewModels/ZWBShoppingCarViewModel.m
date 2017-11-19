@@ -82,7 +82,7 @@
     
     NSInteger storeCount = self.cartData.count;
     NSInteger storeSelectCount = self.shopSelectArray.count;
-    if (storeSelectCount == storeCount && storeCount != 0) {
+    if (storeSelectCount == storeCount && ![self.shopSelectArray containsObject:@(0)] && storeCount != 0) {
         self.isSelectAll = YES;
     }
     // 遍历
@@ -91,11 +91,11 @@
         for (ZWBShoppingCarModel *model in storeArr) {
             if (!model.isSelect) {
                 self.isSelectAll = NO;
+            } else { // 只遍历选中的数据
+                allPrices += model.p_quantity * model.p_price;
             }
-            allPrices += model.p_quantity * model.p_price;
         }
     }
-    self.allPrices = allPrices;
     
     return allPrices;
 }

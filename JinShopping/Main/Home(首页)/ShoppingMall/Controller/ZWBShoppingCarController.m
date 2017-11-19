@@ -154,8 +154,8 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     }];
 }
 
-// 店铺头部的代理
 #pragma mark - ZWBShoppingCarHeaderDelegate
+// 店铺头部的代理
 - (void)clickStoreGoodsButton:(UIButton *)button headerView:(ZWBShoppingCarHeaderView *)currentView section:(NSInteger)section {
     // 店铺的数据
     NSMutableArray *shopArray = self.cartViewModel.cartData[section];
@@ -167,6 +167,12 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
     }
     
     self.cartViewModel.allPrices = [self.cartViewModel getAllPrices];
+    if ([self.cartViewModel.shopSelectArray containsObject:@(0)]) {
+        self.toolBarView.selectAllButton.selected = NO;
+    } else {
+        self.toolBarView.selectAllButton.selected = YES;
+    }
+    
     WeakSelf(self);
     [UIView performWithoutAnimation:^{
         [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
@@ -179,6 +185,7 @@ static NSString *ZWBShoppingCarCellID       = @"ZWBShoppingCarCell";
 - (void)selectAllButtonClick:(BOOL)isSelected {
     
     [self.cartViewModel selectAll:isSelected];
+    [self.tableView reloadData];
 }
 
 // 删除

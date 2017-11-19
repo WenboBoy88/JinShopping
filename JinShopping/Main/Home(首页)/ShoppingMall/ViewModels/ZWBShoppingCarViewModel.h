@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) NSMutableArray *cartData;
 /**
- *  存放店铺选中
+ *  存放店铺选中状态
  */
 @property (nonatomic, strong) NSMutableArray *shopSelectArray;
 /**
